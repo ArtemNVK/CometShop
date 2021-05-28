@@ -575,8 +575,8 @@ img.large {
 /* Carousel */
 
 .carousel__container a {
- width: 100%;
- text-align: center;
+ width: 100% !important;
+ text-align: center !important;
 }
 
 .cGKbZh {
