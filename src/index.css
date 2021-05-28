@@ -108,9 +108,7 @@ button {
   letter-spacing: 0.2rem;
   border-radius: 5%;
 }
-.navItems-bg:hover {
-  border: 1px solid #FF6B6B;
-}
+
 textarea:hover,
 button:hover {
   border: 0.1rem #292F36 solid;
