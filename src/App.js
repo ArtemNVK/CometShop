@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { signout } from './actions/userActions';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
@@ -50,7 +50,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <Router>
       <div className="grid-container">
         <header className="row header">
           <div>
@@ -303,7 +303,7 @@ function App() {
         </main>
         <footer className="row center">CometShop 2021</footer>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
