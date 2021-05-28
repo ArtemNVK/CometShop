@@ -25,13 +25,13 @@ export default function HomeScreen() {
       <div className="carousel__container">
           <Carousel>
             <Link to="/search/category/Solar%20panels">
-              <img src="uploads/banner1.jpg" alt="banner" />
+              <img src="https://cometshop.herokuapp.com/uploads/banner1.jpg" alt="banner" />
             </Link>
             <Link to="/search/category/Solar%20panels">
-              <img src="uploads/banner1.jpg" alt="banner" />
+              <img src="https://cometshop.herokuapp.com/uploads/banner1.jpg" alt="banner" />
             </Link>
             <Link to="/search/category/Solar%20panels">
-              <img src="uploads/banner1.jpg" alt="banner" />
+              <img src="https://cometshop.herokuapp.com/uploads/banner1.jpg" alt="banner" />
             </Link>
           </Carousel>
       </div>
