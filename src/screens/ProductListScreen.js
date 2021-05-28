@@ -27,7 +27,6 @@ export default function ProductListScreen(props) {
   } = productCreate;
 
 
-console.log(products)
   const productDelete = useSelector((state) => state.productDelete);
   const {
     loading: loadingDelete,
