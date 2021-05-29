@@ -26,7 +26,7 @@ export default function OrderScreen(props) {
     success: successDecrease,
   } = productDecreaseCIS;
 
-  document.title = `Order ${order._id}`
+  document.title = `Order Info`
 
   const items = [];
   

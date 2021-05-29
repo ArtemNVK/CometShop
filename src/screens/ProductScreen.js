@@ -25,7 +25,7 @@ export default function ProductScreen(props) {
     success: successReviewCreate,
   } = productReviewCreate;
 
-  document.title = `${product.name}`
+  
 
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');

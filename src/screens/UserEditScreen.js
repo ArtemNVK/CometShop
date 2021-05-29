@@ -16,7 +16,7 @@ export default function UserEditScreen(props) {
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
-  document.title = `${user.name}`
+  document.title = `Edit User`
   const userUpdate = useSelector((state) => state.userUpdate);
   const {
     loading: loadingUpdate,

@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 
 export default function HomeScreen() {
-  document.title = "Homepage"
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
