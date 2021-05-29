@@ -153,7 +153,7 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <div className="navItems-bg">
+              <div id="navbar-signin-desktop" className="navItems-bg">
               <Link to="/signin">Sign In</Link>
               </div>
             )}
