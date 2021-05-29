@@ -7,6 +7,7 @@ import MessageBox from '../components/MessageBox';
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 
 export default function ProductCreateScreen(props) {
+  document.title = "Create New Products"
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');

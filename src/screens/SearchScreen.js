@@ -10,6 +10,7 @@ import { prices, ratings } from '../utils';
 import Pagination from '../components/Pagination';
 
 export default function SearchScreen(props) {
+  document.title = "Search"
   const {
     name = 'all',
     category = 'all',

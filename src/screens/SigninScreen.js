@@ -6,6 +6,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
 export default function SigninScreen(props) {
+  document.title = "Sign in"
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

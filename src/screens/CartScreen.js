@@ -5,6 +5,7 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 import MessageBox from '../components/MessageBox';
 
 export default function CartScreen(props) {
+  document.title = "Cart"
   const productId = props.match.params.id;
   const qty = props.location.search
     ? Number(props.location.search.split('=')[1])

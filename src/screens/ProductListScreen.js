@@ -15,6 +15,7 @@ import Pagination from '../components/Pagination';
 
 
 export default function ProductListScreen(props) {
+  document.title = "List of Products"
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
   const [page, setPage] = useState(1);

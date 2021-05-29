@@ -8,6 +8,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
 export default function PlaceOrderScreen(props) {
+  document.title = "Place Order"
   const cart = useSelector((state) => state.cart);
   if (!cart.paymentMethod) {
     props.history.push('/payment');
