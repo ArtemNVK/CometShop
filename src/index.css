@@ -783,7 +783,7 @@ img.large {
 /* Media Queries */
 
 /* mobile styles */
-@media screen and (min-width: 279px) and (max-width: 282px){
+@media screen and (min-width: 250px) and (max-width: 300px){
   .carousel__container {
     max-height: 100px;
   }
