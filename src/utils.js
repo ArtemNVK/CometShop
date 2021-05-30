@@ -59,114 +59,18 @@ export const prices = [
       rating: 1,
     },
   ];
-  export const adminRoutes = [
+
+  export const sliderData = [
     {
-      path: "/productlist", 
-      name: "Product List", 
-      Component: ProductListScreen
+      image: 'https://cometshop.herokuapp.com/uploads/banner1.jpg',
+      category: 'Solar Panels'
     },
     {
-      path: "/orderlist", 
-      name: "Order List", 
-      Component: OrderListScreen
+      image: 'https://themoneyninja.com/wp-content/uploads/2020/09/Amazon-Discover-50-Off-150-Purchase-Banner.jpg',
+      category: null
     },
     {
-      path: "/userlist", 
-      name: "User List", 
-      Component: UserListScreen
-    },
-    {
-      path: "/user/:id/edit", 
-      name: "User Edit", 
-      Component: UserEditScreen
+      image: 'https://themoneyninja.com/wp-content/uploads/2020/09/Amazon-Discover-50-Off-150-Purchase-Banner.jpg',
+      category: null
     }
-  ];
-  export const privateRoutes = [
-    {
-      path: "/profile", 
-      name: "Profile", 
-      Component: ProfileScreen
-    }
-  ];
-  export const routes = [
-    {
-      path: "/", 
-      name: "Home", 
-      Component: HomeScreen
-    },
-    {
-      path: "/cart/:id?", 
-      name: "Cart", 
-      Component: CartScreen
-    },
-    {
-      path: "/product/:id", 
-      name: "Product", 
-      Component: ProductScreen
-    },
-    {
-      path: "/product/:id/edit", 
-      name: "Edit Product", 
-      Component: ProductEditScreen
-    },
-    {
-      path: "/signin", 
-      name: "Sign In", 
-      Component: SigninScreen
-    },
-    {
-      path: "/cart/:id?", 
-      name: "Cart", 
-      Component: CartScreen
-    },
-    {
-      path: "/register", 
-      name: "Register", 
-      Component: RegisterScreen
-    },
-    {
-      path: "/shipping", 
-      name: "Shipping", 
-      Component: ShippingAddressScreen
-    },
-    {
-      path: "/payment", 
-      name: "Payment", 
-      Component: PaymentMethodScreen
-    },
-    {
-      path: "/placeorder", 
-      name: "Place Order", 
-      Component: PlaceOrderScreen
-    },
-    {
-      path: "/order/:id", 
-      name: "Order", 
-      Component: OrderScreen
-    },
-    {
-      path: "/orderhistory", 
-      name: "Order History", 
-      Component: OrderHistoryScreen
-    },
-    {
-      path: "/search/name/:name?", 
-      name: "Search", 
-      Component: SearchScreen
-    },
-    {
-      path: "/search/category/:category", 
-      name: "Search", 
-      Component: SearchScreen
-    },
-    {
-      path: "/search/category/:category/name/:name", 
-      name: "Search", 
-      Component: SearchScreen
-    },
-    {
-      path: "/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order", 
-      name: "Search", 
-      Component: SearchScreen
-    }
-  ];
+  ]

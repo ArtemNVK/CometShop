@@ -5,9 +5,10 @@ import MessageBox from '../components/MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { PRODUCT_REVIEW_CREATE_FAIL_RESET } from '../constants/productConstants';
-import Carousel from 'react-elastic-carousel';
 import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
+import PromotionsCarousel from '../components/PromotionsCarousel';
+import { sliderData } from '../utils';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -23,17 +24,7 @@ export default function HomeScreen() {
   return (
     <div>
       <div className="carousel__container">
-          <Carousel>
-            <Link to="/search/category/Solar%20panels">
-              <img src="https://cometshop.herokuapp.com/uploads/banner1.jpg" alt="banner" />
-            </Link>
-            <Link to="/search/category/Solar%20panels">
-              <img src="https://cometshop.herokuapp.com/uploads/banner1.jpg" alt="banner" />
-            </Link>
-            <Link to="/search/category/Solar%20panels">
-              <img src="https://cometshop.herokuapp.com/uploads/banner1.jpg" alt="banner" />
-            </Link>
-          </Carousel>
+         <PromotionsCarousel slides={sliderData}></PromotionsCarousel>
       </div>
       {loading ? (
         <LoadingBox></LoadingBox>
