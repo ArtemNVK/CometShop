@@ -674,7 +674,7 @@ img.large {
  
  .promo-carousel-dots-container {
   position: absolute;
-  z-index: 1200;
+  z-index: 500;
   width: fit-content;
   align-self: flex-end;
  }
