@@ -1402,6 +1402,7 @@ img.large {
     max-height: 300px;
   }
   .slider {
+    width: 60%;
     max-height: 300px;
     padding: 0;
   }
