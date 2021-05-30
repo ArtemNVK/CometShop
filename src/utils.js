@@ -72,5 +72,9 @@ export const prices = [
     {
       image: 'https://themoneyninja.com/wp-content/uploads/2020/09/Amazon-Discover-50-Off-150-Purchase-Banner.jpg',
       category: null
+    },
+    {
+      image: 'https://www.pngitem.com/pimgs/m/384-3845524_cooper-tires-promo-banner-headline-oval-hd-png.png',
+      category: null
     }
   ]
