@@ -646,6 +646,8 @@ img.large {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.05);
+  /* border for sample promo */
+  border: 2px #292F36 solid;
 }
 
  .promo-carousel-img {

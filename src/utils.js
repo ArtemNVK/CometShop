@@ -62,19 +62,11 @@ export const prices = [
 
   export const sliderData = [
     {
-      image: 'https://cometshop.herokuapp.com/uploads/banner1.jpg',
-      category: 'Solar Panels'
+      image: 'https://i.imgur.com/a5RfC2Z.png',
+      category: 'Telescopes'
     },
     {
-      image: 'https://themoneyninja.com/wp-content/uploads/2020/09/Amazon-Discover-50-Off-150-Purchase-Banner.jpg',
-      category: null
-    },
-    {
-      image: 'https://themoneyninja.com/wp-content/uploads/2020/09/Amazon-Discover-50-Off-150-Purchase-Banner.jpg',
-      category: null
-    },
-    {
-      image: 'https://www.pngitem.com/pimgs/m/384-3845524_cooper-tires-promo-banner-headline-oval-hd-png.png',
-      category: null
+      image: 'https://i.imgur.com/uqWC2wm.png',
+      category: 'Telescope Camera Adapter'
     }
   ]
