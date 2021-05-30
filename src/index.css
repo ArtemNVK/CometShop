@@ -645,7 +645,7 @@ img.large {
   opacity: 0.4;
   font-size: 5rem;
   color: #292F36;
-  z-index: 1000;
+  z-index: 500;
   cursor: pointer;
   user-select: none;
 }
