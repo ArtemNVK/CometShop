@@ -947,7 +947,7 @@ img.large {
   }
 
   footer {
-    top: 0;
+    margin-top: 1rem;
     padding: 1.5rem;
   }
 
@@ -962,19 +962,20 @@ img.large {
 }
 
 main {
+  width: 100%;
   padding: 0;
 }
 
 .productScreen__container {
-  width: 320px
+  width: 100%;
 }
 
 #img-container {
-  width: 300px !important;
+  width: 100% !important;
 }
 
 img.large {
-  width: 300px;
+  width: 100%;
 }
 
 #back__btn {
