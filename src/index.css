@@ -935,9 +935,13 @@ img.large {
   } 
 
   .card__name h2{
-    font-size: 1rem;
+    font-size: 1.3rem;
     max-height: 4.7rem;
     overflow: hidden;
+  }
+
+  #productScreen_numReviews {
+    font-size: 1.1rem;
   }
 
   footer {
