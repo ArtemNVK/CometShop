@@ -957,8 +957,26 @@ img.large {
   .rating span:last-child {
     color: #404040;
   }
-
+  
   /* Product Screen */
+
+main {
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.productScreen__container {
+  display: grid;
+  grid-template-columns: 320px;
+}
+
+#img-container {
+  width: 300px;
+}
+
+.img.large {
+  width: 300px;
+}
 
 #back__btn {
   text-transform: uppercase;
@@ -979,10 +997,7 @@ img.large {
 }
 
 #product_name {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  font-size: 2.7rem;
+  font-size: 2rem;
 }
 
 #productScreen__numReviews {
