@@ -134,7 +134,7 @@ const hideLens = () => {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <div>
+        <div className="productScreen__container">
             <div className="breadcrumbs">
               <button id="back__btn" onClick={() => history.goBack(1)}>Back</button>
               <ul>

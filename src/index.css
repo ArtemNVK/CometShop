@@ -956,6 +956,92 @@ img.large {
     color: #404040;
   }
 
+  /* Product Screen */
+ .productScreen__container {
+   width: 100%;
+   
+ }
+
+#back__btn {
+  text-transform: uppercase;
+  display: block;
+  padding: 15px;
+  color: #ffffff;
+  background-color: #FF6B6B;
+  width: fit-content;
+  font-weight: bold;
+}
+
+#back__btn:hover {
+  border: 1px #292F36 solid;
+}
+
+.col-1.prodInfo {
+  margin: 0 3rem;
+}
+
+#product_name {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 2.7rem;
+}
+
+#productScreen__numReviews {
+  margin-left: 1rem;
+  color: #292F36;
+  font-size: 1.7rem;
+  font-style: italic;
+}
+#productScreen__numReviews:hover {
+  color: #FF6B6B;
+}
+
+#productScreen__price {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+.productScreen__titles {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  color: #292F36;
+}
+.productScreen__titles.reviews {
+  text-align: center;
+}
+
+.card__productScreen {
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  margin: 1.7rem;
+  color: #292F36;
+  border: 1px #292F36 solid;
+}
+
+.addToCard__btn {
+  background-color: #FF6B6B;
+  color: #ffffff;
+  padding: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.reviews__section {
+  display: flex;
+  margin-left: 1rem;  
+  color: #292F36;
+}
+
+.submit__review {
+  background-color: #FF6B6B;
+  color: #ffffff;
+  padding: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 }
  
 @media screen and (min-width: 1px) and (max-width: 319px){
