@@ -947,10 +947,7 @@ img.large {
   }
 
   footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0;
     padding: 1.5rem;
   }
 
@@ -960,18 +957,20 @@ img.large {
   
   /* Product Screen */
 
+.col-2.center {
+  width: 320px;
+}
+
 main {
   padding: 0;
-  overflow-x: hidden;
 }
 
 .productScreen__container {
-  display: grid;
-  grid-template-columns: 320px;
+  width: 320px
 }
 
 #img-container {
-  width: 300px;
+  width: 300px !important;
 }
 
 img.large {
