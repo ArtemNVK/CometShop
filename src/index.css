@@ -280,7 +280,7 @@ img.large {
 .card__name h2{
   margin: 0;
   font-size: 1.5rem;
-  height: fit-content;
+  max-height: 4.4rem;
   overflow: hidden;
 }
 
@@ -934,10 +934,10 @@ img.large {
     margin-top: 1.5rem;
   } 
 
-  /* .card__name h2{
-    height: fit-content;
+  .card__name h2{
+    max-height: 4.7rem;
     overflow: hidden;
-  } */
+  }
 
   footer {
     position: relative;
