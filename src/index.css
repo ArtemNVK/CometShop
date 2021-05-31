@@ -932,7 +932,12 @@ img.large {
 
   #smallscreens-admin-element {
     margin-top: 1.5rem;
-  } */
+  } 
+
+  .card__name h2{
+    max-height: 4.5rem;
+    overflow: hidden;
+  }
 
   footer {
     position: relative;
