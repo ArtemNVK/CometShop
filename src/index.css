@@ -453,6 +453,9 @@ img.large {
 }
 
 /* Product Screen */
+.productScreen__container {
+  width: 100%;
+}
 
 #back__btn {
   text-transform: uppercase;
@@ -652,7 +655,6 @@ img.large {
 
  .promo-carousel-img {
    width: 100%;
-   padding-bottom: 25%;
    height: 100%;
    border-radius: 5px;
  } 
@@ -957,10 +959,6 @@ img.large {
   }
 
   /* Product Screen */
- .productScreen__container {
-   width: 100%;
-   
- }
 
 #back__btn {
   text-transform: uppercase;
