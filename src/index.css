@@ -972,10 +972,11 @@ main {
 
 #img-container {
   width: 100% !important;
+  text-align: center;
 }
 
 img.large {
-  width: 100%;
+  width: 90%;
 }
 
 #back__btn {
@@ -993,7 +994,7 @@ img.large {
 }
 
 .col-1.prodInfo {
-  margin: 0 3rem;
+  margin: 0 2rem;
 }
 
 #product_name {
