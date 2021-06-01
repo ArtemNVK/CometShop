@@ -784,7 +784,8 @@ img.large {
 .smallscreens-navbar-signin,
 .smallscreens-navbar-searchbar,
 #smallscreens-navbar-shop-title,
-#smallscreens-admin-element {
+#smallscreens-admin-element,
+#smallscreens-back-btn {
   display: none;
 }
 
@@ -968,6 +969,11 @@ main {
 
 .productScreen__container {
   width: 100%;
+}
+
+#smallscreens-back-btn {
+  display: block;
+  cursor: pointer;
 }
 
 #img-container {
@@ -1368,7 +1374,7 @@ img.large {
 
 @media screen and (min-width: 767px) and (max-width: 1025px) {
   .breadcrumbs.hide {
-    display: block;
+    display: flex;
   }
   #back__btn {
     margin-left: 1rem;

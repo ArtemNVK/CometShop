@@ -7,6 +7,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
+import { IoIosArrowBack } from 'react-icons/io';
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
@@ -135,6 +136,7 @@ const hideLens = () => {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="productScreen__container">
+            <button id="smallscreens-back-btn" onClick={() => history.goBack(1)}><IoIosArrowBack></IoIosArrowBack></button>
             <div className="breadcrumbs hide">
               <button id="back__btn" onClick={() => history.goBack(1)}>Back</button>
               <ul>
