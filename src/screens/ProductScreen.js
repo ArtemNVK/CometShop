@@ -135,7 +135,7 @@ const hideLens = () => {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="productScreen__container">
-            <div className="breadcrumbs">
+            <div className="breadcrumbs hide">
               <button id="back__btn" onClick={() => history.goBack(1)}>Back</button>
               <ul>
                 <li>

@@ -1056,8 +1056,12 @@ img.large {
   text-transform: uppercase;
   font-weight: bold;
 }
+.breadcrumbs.hide {
+  display: none;
+}
 }
  
+
 @media screen and (min-width: 1px) and (max-width: 319px){
 
   .carousel__container {
@@ -1361,6 +1365,21 @@ img.large {
      }
 
 }
+
+@media screen and (min-width: 767px) and (max-width: 1025px) {
+  .breadcrumbs.hide {
+    display: block;
+  }
+  #back__btn {
+    margin-left: 1rem;
+  }
+  .breadcrumbs ul {
+    margin: 0;
+    padding: 1rem;
+  }
+}
+
+
 @media screen and (min-width: 860px) and (max-width: 1015px) {
  
   .carousel__container {
