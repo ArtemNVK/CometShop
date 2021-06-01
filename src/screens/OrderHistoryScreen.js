@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { listOrderMine } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -19,7 +20,12 @@ export default function OrderHistoryScreen(props) {
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
-      ) : (
+      ) : orders.length === 0 ? (
+        <MessageBox>
+            You have no orders. <Link to="/">Go Shopping</Link>
+        </MessageBox>
+      )
+        : (
         <table className="table">
           <thead>
             <tr>
