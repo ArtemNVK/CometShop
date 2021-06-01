@@ -36,6 +36,7 @@ export default function CartScreen(props) {
             Cart is empty. <Link to="/">Go Shopping</Link>
           </MessageBox>
         ) : (
+          <>
           <ul>
             {cartItems.map((item) => (
               <li key={item.product}>
@@ -79,29 +80,30 @@ export default function CartScreen(props) {
               </li>
             ))}
           </ul>
-        )}
-      </div>
-      <div className="col-1">
-        <div className="card__productScreen">
-          <ul>
-            <li>
-              <h2>
-                Total ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $ 
-                  {Math.floor(cartItems.reduce((a, c) => a + c.price * c.qty, 0) * 100) / 100}
-              </h2>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={checkoutHandler}
-                className="toCheckpoint block"
-                disabled={cartItems.length === 0}
-              >
-                Proceed to Checkout
-              </button>
-            </li>
-          </ul>
+          <div className="col-1">
+          <div className="card__productScreen">
+            <ul>
+              <li>
+                <h2>
+                  Total ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $ 
+                    {Math.floor(cartItems.reduce((a, c) => a + c.price * c.qty, 0) * 100) / 100}
+                </h2>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={checkoutHandler}
+                  className="toCheckpoint block"
+                  disabled={cartItems.length === 0}
+                >
+                  Proceed to Checkout
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
+        </>
+        )}
       </div>
     </div>
   );
