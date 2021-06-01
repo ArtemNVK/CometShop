@@ -71,7 +71,7 @@ export default function SearchScreen(props) {
               <ul>
                 <li>
                   <Link
-                    className={'all' === category ? 'active' : ''}
+                    className={'all' === category ? 'selected-filter' : ''}
                     to={getFilterUrl({ category: 'all' })}
                   >
                     All
@@ -80,7 +80,7 @@ export default function SearchScreen(props) {
                 {categories.map((c) => (
                   <li key={c}>
                     <Link
-                      className={c === category ? 'active' : ''}
+                      className={c === category ? 'selected-filter' : ''}
                       to={getFilterUrl({ category: c })}
                     >
                       {c}
@@ -98,7 +98,7 @@ export default function SearchScreen(props) {
                   <Link
                     to={getFilterUrl( `${p.min}-${p.max}` === `${min}-${max}` ? { min: '0', max: '0'} : { min: p.min, max: p.max })}
                     className={
-                      `${p.min}-${p.max}` === `${min}-${max}` ? 'active' : ''
+                      `${p.min}-${p.max}` === `${min}-${max}` ? 'selected-filter' : ''
                     }
                   >
                     {p.name}
@@ -115,7 +115,7 @@ export default function SearchScreen(props) {
                 <li key={r.name}>
                   <Link
                     to={getFilterUrl(`${r.rating}` === `${rating}` ? {rating: '0'} : {rating: r.rating})}
-                    className={`${r.rating}` === `${rating}` ? 'active' : ''}
+                    className={`${r.rating}` === `${rating}` ? 'selected-filter' : ''}
                   >
                     <Rating caption={' & up'} rating={r.rating}></Rating>
                   </Link>
@@ -156,7 +156,7 @@ export default function SearchScreen(props) {
                 <ul>
                   <li>
                     <Link
-                      className={'all' === category ? 'active' : ''}
+                      className={'all' === category ? 'selected-filter' : ''}
                       to={getFilterUrl({ category: 'all' })}
                     >
                       All
@@ -165,7 +165,7 @@ export default function SearchScreen(props) {
                   {categories.map((c) => (
                     <li key={c}>
                       <Link
-                        className={c === category ? 'active' : ''}
+                        className={c === category ? 'selected-filter' : ''}
                         to={getFilterUrl({ category: c })}
                       >
                         {c}
@@ -183,7 +183,7 @@ export default function SearchScreen(props) {
                     <Link
                       to={getFilterUrl( `${p.min}-${p.max}` === `${min}-${max}` ? { min: '0', max: '0'} : { min: p.min, max: p.max })}
                       className={
-                        `${p.min}-${p.max}` === `${min}-${max}` ? 'active' : ''
+                        `${p.min}-${p.max}` === `${min}-${max}` ? 'selected-filter' : ''
                       }
                     >
                       {p.name}
@@ -200,7 +200,7 @@ export default function SearchScreen(props) {
                   <li key={r.name}>
                     <Link
                       to={getFilterUrl(`${r.rating}` === `${rating}` ? {rating: '0'} : {rating: r.rating})}
-                      className={`${r.rating}` === `${rating}` ? 'active' : ''}
+                      className={`${r.rating}` === `${rating}` ? 'selected-filter' : ''}
                     >
                       <Rating caption={' & up'} rating={r.rating}></Rating>
                     </Link>

@@ -1235,6 +1235,10 @@ img.large {
   overflow: scroll;
   background-color: #ffffff !important;
 }
+.selected-filter {
+  color: #FF6B6B;
+}
+
 .smallscreens-searchscreen-filters-container.active + div {
   display: none;
 }
