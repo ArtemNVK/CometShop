@@ -67,7 +67,9 @@ a:hover {
 a:active {
   color: #292F36;
 }
-
+.selected-filter {
+  color: #FF6B6B !important;
+}
 ul {
   padding: 0;
   margin: 0;
