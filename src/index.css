@@ -58,10 +58,14 @@ h2 {
 }
 
 a {
+  color: #292F36;
   text-decoration: none;
 }
 a:hover {
   color: #FF6B6B;
+}
+a:active {
+  color: #292F36;
 }
 
 ul {
@@ -1238,7 +1242,7 @@ img.large {
   background-color: #ffffff !important;
 }
 .smallscreens-searchscreen-filters-container.active a:visited {
-  color: #292F36 !important;
+  color: #292F36;
 }
 .selected-filter {
   color: #FF6B6B !important;
