@@ -58,15 +58,12 @@ h2 {
 }
 
 a {
-  color: #292F36;
   text-decoration: none;
 }
 a:hover {
   color: #FF6B6B;
 }
-a:visited {
-  color: #292F36 !important;
-}
+
 ul {
   padding: 0;
   margin: 0;
@@ -112,9 +109,7 @@ button {
   letter-spacing: 0.2rem;
   border-radius: 5%;
 }
-.navItems-bg a {
-  color: #ffffff !important;
-}
+
 
 textarea:hover,
 button:hover {
@@ -1241,6 +1236,9 @@ img.large {
   right: 0;
   overflow: scroll;
   background-color: #ffffff !important;
+}
+.smallscreens-searchscreen-filters-container.active a:visited {
+  color: #292F36 !important;
 }
 .selected-filter {
   color: #FF6B6B !important;
