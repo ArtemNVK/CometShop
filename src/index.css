@@ -58,6 +58,7 @@ h2 {
 }
 
 a {
+  color: #292F36;
   text-decoration: none;
 }
 a:hover {
@@ -106,6 +107,7 @@ button {
 
 .navItems-bg {
   display: inline;
+  color: #ffffff !important;
   padding: 0.9rem 0.3rem;
   margin: 0px 1rem;
   letter-spacing: 0.2rem;
