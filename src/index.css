@@ -1232,7 +1232,11 @@ img.large {
   bottom: 0;
   left: 0;
   right: 0;
+  overflow: scroll;
   background-color: #ffffff !important;
+}
+.smallscreens-searchscreen-filters-container.active + div {
+  display: none;
 }
 .smallscreens-filterBtnSort-container {
   display: flex;
