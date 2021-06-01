@@ -200,9 +200,8 @@ export default function SearchScreen(props) {
                   <li key={r.name}>
                     <Link
                       to={getFilterUrl(`${r.rating}` === `${rating}` ? {rating: '0'} : {rating: r.rating})}
-                      className={`${r.rating}` === `${rating}` ? 'selected-filter' : ''}
                     >
-                      <Rating caption={' & up'} rating={r.rating}></Rating>
+                      <Rating className={`${r.rating}` === `${rating}` ? 'selected-filter' : ''} caption={' & up'} rating={r.rating}></Rating>
                     </Link>
                   </li>
 
