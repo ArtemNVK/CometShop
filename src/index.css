@@ -107,11 +107,13 @@ button {
 
 .navItems-bg {
   display: inline;
-  color: #ffffff !important;
   padding: 0.9rem 0.3rem;
   margin: 0px 1rem;
   letter-spacing: 0.2rem;
   border-radius: 5%;
+}
+.navItems-bg a {
+  color: #ffffff !important;
 }
 
 textarea:hover,
