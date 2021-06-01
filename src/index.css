@@ -65,7 +65,7 @@ a:hover {
   color: #FF6B6B;
 }
 a:visited {
-  color: #292F36;
+  color: #292F36 !important;
 }
 ul {
   padding: 0;
