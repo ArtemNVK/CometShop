@@ -81,7 +81,7 @@ export default function CartScreen(props) {
             ))}
           </ul>
           <div className="col-1">
-          <div className="card__productScreen">
+          <div className="cartscreen-proceed-btn-container">
             <ul>
               <li>
                 <h2>
