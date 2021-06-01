@@ -1076,7 +1076,9 @@ img.large {
 }
 
 /* Order History */
-
+  .orderHistory-container {
+    margin: 1rem;
+  }
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
@@ -1087,6 +1089,9 @@ img.large {
 
   .table td, .table th {
     padding: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
 	/* Hide table headers (but not display: none;, for accessibility) */
@@ -1107,8 +1112,6 @@ img.large {
 	}
 	
 	td:before { 
-		/* Now like a table header */
-		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
