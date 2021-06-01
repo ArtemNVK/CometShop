@@ -853,6 +853,9 @@ img.large {
   .navItems-bg.cart {
     display: none !important;
   }
+  #lens {
+    display: none !important;
+  }
   .searchbar {
     display: none !important;
   }
