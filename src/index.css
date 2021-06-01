@@ -972,8 +972,14 @@ main {
 }
 
 #smallscreens-back-btn {
-  display: block;
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 300;
   cursor: pointer;
+  margin-left: 1rem;
+  background-color: transparent;
 }
 
 #img-container {
