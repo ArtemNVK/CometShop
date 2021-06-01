@@ -1083,6 +1083,12 @@ img.large {
 		display: block; 
 	}
 	
+  /* Overwrite desktop table styles */
+
+  .table td, .table th {
+    padding: 0 !important;
+  }
+
 	/* Hide table headers (but not display: none;, for accessibility) */
 	thead tr { 
 		position: absolute;
