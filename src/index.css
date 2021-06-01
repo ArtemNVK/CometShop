@@ -1158,6 +1158,15 @@ img.large {
     margin-bottom: 1rem;
   }
 
+  /* CartScreen */
+
+  .cartscreen-proceed-btn-container {
+    float: none;
+    width: 80%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
 }
  
 
