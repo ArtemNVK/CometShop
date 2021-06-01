@@ -79,7 +79,7 @@ export default function ProductListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
+        <table className="table products">
           <thead>
             <tr>
               <th>ID</th>
@@ -93,12 +93,12 @@ export default function ProductListScreen(props) {
           <tbody>
             {products.results.map((product) => (
               <tr key={product._id}>
-                <td>{product._id}</td>
-                <td>{product.name}</td>
-                <td>{product.price.toFixed(2)}</td>
-                <td>{product.category}</td>
-                <td>{product.brand}</td>
-                <td>
+                <td className="smallscreens-table-td-products">{product._id}</td>
+                <td className="smallscreens-table-td-products">{product.name}</td>
+                <td className="smallscreens-table-td-products">{product.price.toFixed(2)}</td>
+                <td className="smallscreens-table-td-products">{product.category}</td>
+                <td className="smallscreens-table-td-products">{product.brand}</td>
+                <td className="smallscreens-table-td-products">
                   <button
                     type="button"
                     className="small"

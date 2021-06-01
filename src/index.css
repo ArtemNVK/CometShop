@@ -1136,12 +1136,28 @@ img.large {
 	/*
 	Label the data
 	*/
+  /* orderhistory */
 	td:nth-of-type(1):before { content: "ID"; }
 	td:nth-of-type(2):before { content: "Date"; }
 	td:nth-of-type(3):before { content: "Total"; }
 	td:nth-of-type(4):before { content: "Paid"; }
 	td:nth-of-type(5):before { content: "Delivered"; }
 	td:nth-of-type(6):before { content: "Actions"; }
+
+  /* products list */
+	td.smallscreens-table-td-products:nth-of-type(1):before { content: "ID"; }
+	td.smallscreens-table-td-products:nth-of-type(2):before { content: "Name"; }
+	td.smallscreens-table-td-products:nth-of-type(3):before { content: "Price"; }
+	td.smallscreens-table-td-products:nth-of-type(4):before { content: "Category"; }
+	td.smallscreens-table-td-products:nth-of-type(5):before { content: "Brand"; }
+	td.smallscreens-table-td-products:nth-of-type(6):before { content: "Actions"; }
+  /* users */
+	td.smallscreens-table-td-users:nth-of-type(1):before { content: "ID"; }
+	td.smallscreens-table-td-users:nth-of-type(2):before { content: "Name"; }
+	td.smallscreens-table-td-users:nth-of-type(3):before { content: "Email"; }
+	td.smallscreens-table-td-users:nth-of-type(4):before { content: "Is admin"; }
+	td.smallscreens-table-td-users:nth-of-type(6):before { content: "Actions"; }
+
 
   /* OrderScreen */
 

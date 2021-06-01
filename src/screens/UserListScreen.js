@@ -48,7 +48,6 @@ export default function UserListScreen(props) {
               <th>ID</th>
               <th>NAME</th>
               <th>EMAIL</th>
-              <th>IS SELLER</th>
               <th>IS ADMIN</th>
               <th>ACTIONS</th>
             </tr>
@@ -56,12 +55,11 @@ export default function UserListScreen(props) {
           <tbody>
             {users.map((user) => (
               <tr key={user._id}>
-                <td>{user._id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.isSeller ? 'YES' : ' NO'}</td>
-                <td>{user.isAdmin ? 'YES' : 'NO'}</td>
-                <td>
+                <td className="smallscreens-table-td-users">{user._id}</td>
+                <td className="smallscreens-table-td-users">{user.name}</td>
+                <td className="smallscreens-table-td-users">{user.email}</td>
+                <td className="smallscreens-table-td-users">{user.isAdmin ? 'YES' : 'NO'}</td>
+                <td className="smallscreens-table-td-users">
                   <button
                     type="button"
                     className="small"
