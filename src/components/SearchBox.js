@@ -17,7 +17,7 @@ export default function SearchBox(props) {
                     type="text" 
                     name="q"
                     id="q"
-                    placeholder="Search on CometShop"
+                    placeholder="Search CometShop"
                     onChange={e => setName(e.target.value)}
                     />
                     <button id="search-btn" type="submit">
