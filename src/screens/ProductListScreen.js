@@ -55,7 +55,7 @@ export default function ProductListScreen(props) {
 
 
   return (
-    <div>
+    <div className="admin-list">
       <div className="createproduct-btn-container">
        <button 
         type="button" 
