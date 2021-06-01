@@ -56,6 +56,7 @@ export default function ProductListScreen(props) {
 
   return (
     <div>
+      <div className="createproduct-btn-container">
        <button 
         type="button" 
         className="primary smallscreens-createproduct-btn"  
@@ -65,6 +66,7 @@ export default function ProductListScreen(props) {
         >
           Create Product
         </button>
+      </div>
       
 
       {loadingDelete && <LoadingBox></LoadingBox>}

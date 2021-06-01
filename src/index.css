@@ -790,6 +790,10 @@ img.large {
 #sidebar-title-categories {
   font-size: 3rem;
 }
+
+.createproduct-btn-container {
+  margin-bottom: 1rem;
+}
 /*  */
 
 .smallscreens-navbar-container,
@@ -801,6 +805,7 @@ img.large {
 #smallscreens-back-btn {
   display: none;
 }
+
 
 /* Media Queries */
 
@@ -1183,6 +1188,12 @@ img.large {
   }
 
   /* Product list */
+.createproduct-btn-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .smallscreens-createproduct-btn {
   font-size: 1.5rem;
   height: 6.5rem;
