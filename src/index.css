@@ -1130,6 +1130,15 @@ img.large {
 	td:nth-of-type(5):before { content: "Delivered"; }
 	td:nth-of-type(6):before { content: "Actions"; }
 
+  /* OrderScreen */
+
+  .order-screen-container {
+    margin: 1rem;
+  }
+
+  #orderSummary {
+    margin-left: 0 !important;
+  }
 
 }
  
