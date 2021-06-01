@@ -1182,6 +1182,16 @@ img.large {
     margin: 1rem auto;
   }
 
+  /* Product list */
+.smallscreens-createproduct-btn {
+  font-size: 1.5rem;
+  height: 6.5rem;
+  text-align: center;
+  width: 90%;
+  align-self: center;
+  margin: 1rem auto;
+}
+
 }
  
 

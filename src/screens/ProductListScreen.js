@@ -56,18 +56,16 @@ export default function ProductListScreen(props) {
 
   return (
     <div>
-      <div className="row">
-        <h1>Products</h1>
-        <button 
+       <button 
         type="button" 
-        className="primary"  
+        className="primary smallscreens-createproduct-btn"  
         onClick={() => {
           props.history.push(`/products/create`)
         }}
         >
           Create Product
         </button>
-      </div>
+      
 
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
