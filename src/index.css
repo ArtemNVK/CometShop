@@ -375,6 +375,9 @@ img.large {
   display: block;
 }
 /* Checkout Steps */
+.checkout-steps {
+  align-items: flex-start;
+}
 .checkout-steps > div {
   border-top: 0.3rem #c0c0c0 solid;
   color: #c0c0c0;
