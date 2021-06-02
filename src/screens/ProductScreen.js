@@ -115,7 +115,9 @@ function imageZoom(imgID){
 
     let x = e.pageX - bounds.left
 		let y = e.pageY - bounds.top
-
+    console.log('PageX: ' + e.pageX,'PageY: ' + e.pageY)
+    console.log('Bounds left: ' + bounds.left,'Bounds top: ' + bounds.top)
+    console.log('X: ' + x,'Y: ' + y);
 		// x = x - window.pageXOffset;
 		// y = y - window.pageYOffset;
 		return {'x':x, 'y':y}
