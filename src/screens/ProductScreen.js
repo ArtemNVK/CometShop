@@ -86,7 +86,7 @@ function imageZoom(imgID){
 
 	img.addEventListener("mousemove", moveLens)
 	lens.addEventListener("mousemove", moveLens)
-	img.addEventListener("touchmove", moveLens)
+	// img.addEventListener("touchmove", moveLens)
 
 	function moveLens(){
 		let pos = getCursor()
@@ -114,8 +114,8 @@ function imageZoom(imgID){
         let bounds = img.getBoundingClientRect()
         let x = e.pageX - bounds.left
 		let y = e.pageY - bounds.top
-		x = x - window.pageXOffset;
-		y = y - window.pageYOffset;
+		// x = x - window.pageXOffset;
+		// y = y - window.pageYOffset;
 		return {'x':x, 'y':y}
 	}
 
