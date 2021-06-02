@@ -755,12 +755,15 @@ img.large {
 #lens{
   display: none;
 	z-index: 2;
+  top: 0;
+  left: 0;
 	position: absolute;
-	height: 125px;
-	width: 125px;
-	border:2px solid #292F36;
+	height: 100%;
+	width: 100%;
+	/* border:2px solid #292F36; */
 	background-repeat: no-repeat;
-	cursor: none;
+  background-color: #ffffff;
+	/* cursor: none; */
 }
 
 /* Breadcrumbs */
