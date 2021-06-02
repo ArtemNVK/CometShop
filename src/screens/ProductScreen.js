@@ -104,8 +104,8 @@ function imageZoom(imgID){
 		if(positionTop > img.height - lens.offsetHeight /3 ){
 			positionTop = img.height - lens.offsetHeight /3
 		}
-		// lens.style.left = positionLeft + 'px';
-		// lens.style.top = positionTop + 'px';
+		lens.style.left = positionLeft + 'px';
+		lens.style.top = positionTop + 'px';
 		lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
 	}
 
