@@ -82,7 +82,7 @@ function imageZoom(imgID){
 	lens.style.backgroundImage = `url( ${img.src} )`
 
 
-	let ratio = 2
+	let ratio = 3
 
 	lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
 
@@ -119,8 +119,8 @@ function imageZoom(imgID){
     let bounds = img.getBoundingClientRect()
     let x = e.pageX - bounds.left;
     let y = e.pageY - bounds.top;
-		x = x - window.pageXOffset;
-		y = y - window.pageYOffset;
+		x = x - window.pageXOffset - 100;
+		y = y - window.pageYOffset - 95;
 		return {'x': x, 'y': y}
 	}
 
