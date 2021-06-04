@@ -83,8 +83,8 @@ function imageZoom(imgID){
 	function moveLens(){
     let width = img.offsetWidth;
     let height = img.offsetHeight;
-    let mouseX = e.offsetX;
-    let mouseY = e.offsetY;
+    let mouseX = e.pageX;
+    let mouseY = e.pageY;
     let bgPosX = (mouseX / width * 100);
     let bgPosY = (mouseY / height * 100);
     img.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
