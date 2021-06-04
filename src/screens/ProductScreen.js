@@ -81,12 +81,14 @@ function imageZoom(imgID){
 	img.addEventListener("mousemove", moveLens)
 
 	function moveLens(){
-    let width = img.offsetWidth;
-    let height = img.offsetHeight;
+    let bounds = img.getBoundingClientRect()
+    let width = bounds.top;
+    let height = bounds.left;
     let mouseX = e.pageX;
     let mouseY = e.pageY;
     let bgPosX = (mouseX / width * 100);
     let bgPosY = (mouseY / height * 100);
+  
     img.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
 	}
 }
