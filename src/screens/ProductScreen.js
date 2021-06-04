@@ -80,9 +80,17 @@ function imageZoom(imgID){
   setIsLens(true)
 	lens.style.backgroundImage = `url( ${img.src} )`
 
+  let width = img.offsetWidth;
+  let height = img.offsetHeight;
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
+
+  let bgPosX = (mouseX / width * 100);
+  let bgPosY = (mouseY / height * 100);
+
 	let ratio = 3
 
-	lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+	// lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
 
 	img.addEventListener("mousemove", moveLens)
 	lens.addEventListener("mousemove", moveLens)
@@ -106,7 +114,8 @@ function imageZoom(imgID){
 		// }
 		// lens.style.left = positionLeft + 'px';
 		// lens.style.top = positionTop + 'px';
-		lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
+		lens.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+		// lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
 	}
 
 	function getCursor(){
