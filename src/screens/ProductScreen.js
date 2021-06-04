@@ -84,7 +84,7 @@ function imageZoom(imgID){
 
 	let ratio = 3
 
-	// lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+	lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
 
 	img.addEventListener("mousemove", moveLens)
 	lens.addEventListener("mousemove", moveLens)
