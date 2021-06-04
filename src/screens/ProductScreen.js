@@ -76,68 +76,88 @@ export default function ProductScreen(props) {
 
 function imageZoom(imgID){
 	let img = document.getElementById(imgID)
-	let lens = document.getElementById('lens')
-  setIsLens(true)
-	lens.style.backgroundImage = `url( ${img.src} )`
-
-  let width = img.offsetWidth;
-  let height = img.offsetHeight;
-  let mouseX = e.offsetX;
-  let mouseY = e.offsetY;
-
-  let bgPosX = (mouseX / width * 100);
-  let bgPosY = (mouseY / height * 100);
-
-	let ratio = 3
-
-	// lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+  // setIsLens(true)
 
 	img.addEventListener("mousemove", moveLens)
-	lens.addEventListener("mousemove", moveLens)
-	// img.addEventListener("touchmove", moveLens)
 
 	function moveLens(){
-		let pos = getCursor()
-		// let positionLeft = pos.x - (lens.offsetWidth / 2)
-		// let positionTop = pos.y - (lens.offsetHeight / 2)
-		// if(positionLeft < 0 ){
-		// 	positionLeft = 0
-		// }
-		// if(positionTop < 0 ){
-		// 	positionTop = 0
-		// }
-		// if(positionLeft > img.width - lens.offsetWidth /3 ){
-		// 	positionLeft = img.width - lens.offsetWidth /3
-		// }
-		// if(positionTop > img.height - lens.offsetHeight /3 ){
-		// 	positionTop = img.height - lens.offsetHeight /3
-		// }
-		// lens.style.left = positionLeft + 'px';
-		// lens.style.top = positionTop + 'px';
-		lens.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
-		// lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
+    let width = img.offsetWidth;
+    let height = img.offsetHeight;
+    let mouseX = e.offsetX;
+    let mouseY = e.offsetY;
+    let bgPosX = (mouseX / width * 100);
+    let bgPosY = (mouseY / height * 100);
+    img.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
 	}
-
-	function getCursor(){
-    let e = window.event
-    let bounds = img.getBoundingClientRect()
-
-    let x = e.pageX - bounds.top 
-    let y = e.pageY - bounds.left 
-    x = x / 2
-    y = y / 2
-    // let x = e.pageX - bounds.left;
-    // let y = e.pageY - bounds.top;
-		// x = x - window.pageXOffset;
-		// y = y - window.pageYOffset;
-		return {'x':x, 'y':y}
-	}
-
 }
 
 const hideLens = () => {
-  setIsLens(false)
+  img.style.backgroundPosition = "center";
 }
+// function imageZoom(imgID){
+// 	let img = document.getElementById(imgID)
+// 	let lens = document.getElementById('lens')
+//   setIsLens(true)
+// 	lens.style.backgroundImage = `url( ${img.src} )`
+
+
+// 	let ratio = 3
+
+// 	// lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+
+// 	img.addEventListener("mousemove", moveLens)
+// 	lens.addEventListener("mousemove", moveLens)
+// 	// img.addEventListener("touchmove", moveLens)
+
+// 	function moveLens(){
+// 		let pos = getCursor()
+// 		// let positionLeft = pos.x - (lens.offsetWidth / 2)
+// 		// let positionTop = pos.y - (lens.offsetHeight / 2)
+// 		// if(positionLeft < 0 ){
+// 		// 	positionLeft = 0
+// 		// }
+// 		// if(positionTop < 0 ){
+// 		// 	positionTop = 0
+// 		// }
+// 		// if(positionLeft > img.width - lens.offsetWidth /3 ){
+// 		// 	positionLeft = img.width - lens.offsetWidth /3
+// 		// }
+// 		// if(positionTop > img.height - lens.offsetHeight /3 ){
+// 		// 	positionTop = img.height - lens.offsetHeight /3
+// 		// }
+// 		// lens.style.left = positionLeft + 'px';
+// 		// lens.style.top = positionTop + 'px';
+//     let width = img.offsetWidth;
+//     let height = img.offsetHeight;
+//     let mouseX = e.offsetX;
+//     let mouseY = e.offsetY;
+//     let bgPosX = (mouseX / width * 100);
+//     let bgPosY = (mouseY / height * 100);
+
+// 		lens.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+// 		// lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
+// 	}
+
+// 	function getCursor(){
+//     let e = window.event
+//     let bounds = img.getBoundingClientRect()
+
+//     let x = e.pageX - bounds.top 
+//     let y = e.pageY - bounds.left 
+//     x = x / 2
+//     y = y / 2
+//     // let x = e.pageX - bounds.left;
+//     // let y = e.pageY - bounds.top;
+// 		// x = x - window.pageXOffset;
+// 		// y = y - window.pageYOffset;
+// 		return {'x':x, 'y':y}
+// 	}
+
+// }
+
+// const hideLens = () => {
+//   setIsLens(false)
+// }
 
 // END OF THE IMAGE ZOOM SECTION
 
