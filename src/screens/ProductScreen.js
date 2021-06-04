@@ -120,7 +120,7 @@ function imageZoom(imgID){
     let x = e.pageX - bounds.left;
     let y = e.pageY - bounds.top;
 		x = x - window.pageXOffset - 100;
-		y = y - window.pageYOffset - 170;
+		y = y - window.pageYOffset - 100;
 		return {'x': x, 'y': y}
 	}
 
