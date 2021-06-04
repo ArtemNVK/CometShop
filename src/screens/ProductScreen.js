@@ -117,8 +117,8 @@ function imageZoom(imgID){
 	function getCursor(){
     let e = window.event
     let bounds = img.getBoundingClientRect()
-    let x = e.pageXOffset - bounds.left;
-    let y = e.pageYOffset - bounds.top;
+    let x = window.pageXOffset - bounds.left;
+    let y = window.pageYOffset - bounds.top;
 		// x = x - window.pageXOffset;
 		// y = y - window.pageYOffset;
 		return {'x': x, 'y': y}
