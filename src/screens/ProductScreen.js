@@ -110,8 +110,9 @@ function imageZoom(imgID){
 		// lens.style.top = positionTop + 'px';
   
 
-		lens.style.backgroundPosition =  "-" + (pos.x * ratio) + 'px ' + (pos.y * ratio) + 'px';
-	}
+		lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
+  
+  }
 
 	function getCursor(){
     let e = window.event
