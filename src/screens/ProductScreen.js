@@ -119,8 +119,8 @@ function imageZoom(imgID){
     let bounds = img.getBoundingClientRect()
     let x = e.pageX - bounds.left;
     let y = e.pageY - bounds.top;
-		x = x - window.pageXOffset - 100;
-		y = y - window.pageYOffset - 95;
+		x = x - window.pageXOffset;
+		y = y - window.pageYOffset;
 		return {'x': x, 'y': y}
 	}
 
