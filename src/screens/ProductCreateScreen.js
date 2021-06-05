@@ -60,7 +60,7 @@ export default function ProductCreateScreen(props) {
   };
 
   const uploadImgsHandler = async (e) => {
-    const files = Array.from(e.target.files);
+    const files = e.target.files;
     const bodyFormData = new FormData();
     bodyFormData.append('images', files);
     setLoadingImgsUpload(true);
