@@ -71,7 +71,7 @@ export default function ProductCreateScreen(props) {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
-      setImages(data);
+      setImages(files);
       setLoadingImgsUpload(false);
     } catch (error) {
       setErrorImgsUpload(error.message);
