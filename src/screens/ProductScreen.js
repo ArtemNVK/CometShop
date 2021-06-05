@@ -179,6 +179,11 @@ const hideLens = () => {
                   src={product.image}
                   alt={product.name}
                 ></img>
+                {product.previewImgs.map(img => {
+                  return (
+                    <img src={img}></img>
+                  )
+                })}
               </div>
             </div>
             <div className="col-1 prodInfo">
