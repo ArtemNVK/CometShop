@@ -154,6 +154,7 @@ export default function ProductCreateScreen(props) {
                 type="file"
                 id="imageFiles"
                 label="Choose Images"
+                multiple
                 onChange={uploadImgsHandler}
               ></input>
               {loadingImgsUpload && <LoadingBox></LoadingBox>}
