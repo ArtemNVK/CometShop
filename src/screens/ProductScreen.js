@@ -135,11 +135,6 @@ const hideLens = () => {
 
   return (
     <div>
-      {product.previewImgs.map(img => {
-                  return (
-                    <img src={img}></img>
-                  )
-                })}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
