@@ -68,7 +68,7 @@ export default function ProductCreateScreen(props) {
     for (let i = 0; i < ins; i++) {
       bodyFormData.append("iamges", files[i]);
     }
-    
+    console.log(bodyFormData)
     setLoadingImgsUpload(true);
     try {
       const { data } = await Axios.post('https://cometshop.herokuapp.com/api/uploads/imgs', bodyFormData, {
