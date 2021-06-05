@@ -11,6 +11,7 @@ export default function ProductCreateScreen(props) {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
+  const [images, setImages] = useState([]);
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
   const [brand, setBrand] = useState('');
@@ -32,6 +33,8 @@ export default function ProductCreateScreen(props) {
 
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState('');
+  const [loadingImgsUpload, setLoadingImgsUpload] = useState(false);
+  const [errorImgsUpload, setErrorImgsUpload] = useState('');
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -56,6 +59,26 @@ export default function ProductCreateScreen(props) {
     }
   };
 
+  const uploadImgsHandler = async (e) => {
+    const files = e.target.files;
+    const bodyFormData = new FormData();
+    bodyFormData.append('images', files);
+    setLoadingImgsUpload(true);
+    try {
+      const { data } = await Axios.post('https://cometshop.herokuapp.com/api/uploads/imgs', bodyFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      });
+      setImages(data);
+      setLoadingImgsUpload(false);
+    } catch (error) {
+      setErrorImgsUpload(error.message);
+      setLoadingImgsUpload(false);
+    }
+  };
+
   
 
   const createHandler = (e) => {
@@ -64,6 +87,7 @@ export default function ProductCreateScreen(props) {
         name: name,
         price: price,
         image: image,
+        previewImgs: images,
         category: category,
         brand: brand,
         countInStock: countInStock,
@@ -118,6 +142,19 @@ export default function ProductCreateScreen(props) {
                 id="imageFile"
                 label="Choose Image"
                 onChange={uploadFileHandler}
+              ></input>
+              {loadingUpload && <LoadingBox></LoadingBox>}
+              {errorUpload && (
+                <MessageBox variant="danger">{errorUpload}</MessageBox>
+              )}
+            </div>
+            <div>
+              <label htmlFor="imageFile">Preview Images</label>
+              <input
+                type="file"
+                id="imageFiles"
+                label="Choose Images"
+                onChange={uploadImgsHandler}
               ></input>
               {loadingUpload && <LoadingBox></LoadingBox>}
               {errorUpload && (
