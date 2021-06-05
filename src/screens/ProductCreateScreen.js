@@ -61,7 +61,6 @@ export default function ProductCreateScreen(props) {
 
   const uploadImgsHandler = async (e) => {
     const files = e.target.files;
-    
     const bodyFormData = new FormData();
     bodyFormData.append('image', files);
     setLoadingImgsUpload(true);
@@ -72,7 +71,7 @@ export default function ProductCreateScreen(props) {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
-      setImages(files);
+      setImages(data);
       setLoadingImgsUpload(false);
     } catch (error) {
       setErrorImgsUpload(error.message);
@@ -80,7 +79,7 @@ export default function ProductCreateScreen(props) {
     }
   };
 
-  
+  console.log(images)
 
   const createHandler = (e) => {
     e.preventDefault();
