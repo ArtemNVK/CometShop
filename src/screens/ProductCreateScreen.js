@@ -149,16 +149,16 @@ export default function ProductCreateScreen(props) {
               )}
             </div>
             <div>
-              <label htmlFor="imageFile">Preview Images</label>
+              <label htmlFor="imageFiles">Preview Images</label>
               <input
                 type="file"
                 id="imageFiles"
                 label="Choose Images"
                 onChange={uploadImgsHandler}
               ></input>
-              {loadingUpload && <LoadingBox></LoadingBox>}
-              {errorUpload && (
-                <MessageBox variant="danger">{errorUpload}</MessageBox>
+              {loadingImgsUpload && <LoadingBox></LoadingBox>}
+              {errorImgsUpload && (
+                <MessageBox variant="danger">{errorImgsUpload}</MessageBox>
               )}
             </div>
             <div>
