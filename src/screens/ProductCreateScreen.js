@@ -77,7 +77,7 @@ export default function ProductCreateScreen(props) {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
-      console.log('Data from router ' + data)
+      console.log('Data from router ' + data[0])
       setImages(data);
       setLoadingImgsUpload(false);
     } catch (error) {
