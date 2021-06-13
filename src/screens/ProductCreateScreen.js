@@ -62,13 +62,11 @@ export default function ProductCreateScreen(props) {
 
   const uploadImgsHandler = async (e) => {
     const files = Array.from(e.target.files);
-    console.log('Files ' + files)
     const bodyFormData = new FormData();
     files.forEach(file => {
       bodyFormData.append('images', file);
     })
     
-    console.log('FD ' + bodyFormData)
     setLoadingImgsUpload(true);
     try {
       const { data } = await Axios.post('https://cometshop.herokuapp.com/api/uploads/imgs', bodyFormData, {
@@ -77,7 +75,6 @@ export default function ProductCreateScreen(props) {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
-      console.log('Data from router ' + data[0])
       setImages(data);
       setLoadingImgsUpload(false);
     } catch (error) {
@@ -86,7 +83,6 @@ export default function ProductCreateScreen(props) {
     }
   };
 
-  
 
   const createHandler = (e) => {
     e.preventDefault();
