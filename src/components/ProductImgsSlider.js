@@ -4,34 +4,14 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 export default function ProductImgsSlider({product}) {
 
     let thumbnails = document.getElementsByClassName('thumbnail')
-
     let activeImages = document.getElementsByClassName('active')
-
-    for (var i=0; i < thumbnails.length; i++){
-
-        thumbnails[i].addEventListener('click', function(){
-            
-            if (activeImages.length > 0){
-                activeImages[0].classList.remove('active')
-            }
-            
-
-            this.classList.add('active')
-            document.getElementById('featured').src = this.src
-        })
-        thumbnails[i].addEventListener('mouseover', function(){
-            console.log(activeImages)
-            
-            if (activeImages.length > 0){
-                activeImages[0].classList.remove('active')
-            }
-            
-
-            this.classList.add('active')
-            document.getElementById('featured').src = this.src
-        })
+    const handleThumbnail = e => {
+        if (activeImages.length > 0){
+            activeImages[0].classList.remove('active')
+        }
+        e.target.classList.add('active')
+        document.getElementById('featured').src = e.target.src
     }
-
 
     const handleClickLeft = () => {
         document.getElementById('slider').scrollLeft -= 180
@@ -44,8 +24,6 @@ export default function ProductImgsSlider({product}) {
     return (
 
 		<div className="column">
-            
-            
 			<div id="slide-wrapper" >
                 <AiOutlineLeft 
                     id="slideLeft" 
@@ -56,12 +34,16 @@ export default function ProductImgsSlider({product}) {
                     {product &&
                         product.previewImgs.map(image => {
                             return (
-                                <img className="thumbnail active" src={image} />
+                                <img 
+                                    className="thumbnail active" 
+                                    src={image} 
+                                    onClick={e => handleThumbnail(e)}
+                                    onMouseOver={e => handleThumbnail(e)}
+                                />
                             )
                         })
                     }
 				</div>
-
                 <AiOutlineRight 
                     id="slideRight" 
                     className="arrow" 
@@ -69,7 +51,5 @@ export default function ProductImgsSlider({product}) {
                 />
 			</div>
 		</div>
-		// </div>
-
     )
 }
