@@ -917,7 +917,9 @@ img.large {
 .smallscreens-sortBy-container,
 #smallscreens-navbar-shop-title,
 #smallscreens-admin-element,
-#smallscreens-back-btn {
+#smallscreens-back-btn,
+.ss-image-slider-section,
+.ss-image-slider-section.ss-open-image-container {
   display: none;
 }
 
@@ -941,7 +943,9 @@ img.large {
   .smallscreens-navbar-cart,
   .smallscreens-navbar-open-sidebar,
   .smallscreens-navbar-searchbar,
-  #smallscreens-admin-element {
+  #smallscreens-admin-element,
+  .ss-image-slider-section,
+  .ss-image-slider-section.ss-open-image-container {
     display: block;
   }
 
@@ -960,6 +964,11 @@ img.large {
 
   #smallscreens-admin-element {
     display: block;
+  }
+
+  .image-slider-section,
+  .image-slider-section.ss-open-image-container {
+    display: none;
   }
 
   .open-sidebar {
@@ -1147,6 +1156,37 @@ main {
 
 img.large {
   width: 90%;
+}
+
+.ss-open-image-bg {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+}
+
+.ss-image-slider-section.ss-open-image-container {
+  position: relative;
+  overflow: hidden !important;
+}
+
+.ss-open-image {
+  width: 90vw;
+}
+
+#ss-close-image {
+  justify-self: flex-start;
+  align-self: flex-end;
+  margin-right: 10%;
+  width: 3rem;
+  height: 3rem;
 }
 
 #back__btn {

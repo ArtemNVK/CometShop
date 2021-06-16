@@ -9,6 +9,7 @@ import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
 import { IoIosArrowBack } from 'react-icons/io';
 import ProductImgsSlider from '../components/ProductImgsSlider';
+import { AiOutlineClose } from 'react-icons/ai';
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function ProductScreen(props) {
   const [comment, setComment] = useState('');
   const [isLens, setIsLens] = useState(false);
   const [dbclick, setDbclick] = useState(false);
-  
+  const [ssOpenImage, setSmallscreenOpenImageClick] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
@@ -148,7 +149,7 @@ export default function ProductScreen(props) {
 
             <div className="col-2 center">
 
-            <div className={dbclick ? "image-slider-section open-image-container" :"image-slider-section"}>
+            <div className={dbclick ? "image-slider-section open-image-container" : "image-slider-section"}>
             <div 
               id="img-container"
               onMouseOver={() => imageZoom('featured')}
@@ -174,6 +175,39 @@ export default function ProductScreen(props) {
               }   
 
             </div>
+
+            {/* ////////////////////////////////// SMALLSCREENS OPEN IMAGE////////////////////////////////// */}
+            <div className={ssOpenImage ? "ss-open-image-bg" : ""}>
+            <AiOutlineClose 
+                  id="ss-close-image" 
+                  style={ssOpenImage ? {display: "block"} : {display: "none"}} 
+                  onClick={() => setSmallscreenOpenImageClick(false)}
+            />
+            <div className={ssOpenImage ? "ss-image-slider-section ss-open-image-container" : "ss-image-slider-section"}>
+            <div 
+              id="img-container"
+              
+
+              >
+                
+                <img
+                  id="featured"
+                  className={ssOpenImage ? "ss-open-image" : "large"}
+                  src={product.image}
+                  alt={product.name}
+                  onClick={() => setSmallscreenOpenImageClick(true)}
+                ></img>
+                
+              </div>
+              {product && !ssOpenImage &&
+                <ProductImgsSlider 
+                  product={product}
+                ></ProductImgsSlider>
+              }   
+            </div>
+            </div>
+              {/* ////////////////////////////////////////////////////// */}
+
             </div>
 
             
