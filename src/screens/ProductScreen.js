@@ -32,7 +32,7 @@ export default function ProductScreen(props) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
   const [isLens, setIsLens] = useState(false);
-
+  const [dbclick, setDbclick] = useState(false);
   
   const history = useHistory();
 
@@ -148,20 +148,22 @@ export default function ProductScreen(props) {
 
             <div className="col-2 center">
 
-            <div className="image-slider-section">
+            <div className={dbclick ? "image-slider-section open-image-container" :"image-slider-section"}>
             <div 
               id="img-container"
               onMouseOver={() => imageZoom('featured')}
               onMouseOut={() => hideLens()}
+              onDoubleClick={() => setDbclick(true)}
+
               >
-             
+                <div className={dbclick ? "open-image-bg" : ""} onClick={() => setDbclick(false)}></div>
                 <div 
                 id="lens"
                 style={isLens ? {display: "block"} : {display: "none"}}
                 ></div>
                 <img
                   id="featured"
-                  className="large"
+                  className={dbclick ? "open-image" : "large"}
                   src={product.image}
                   alt={product.name}
                 ></img>
