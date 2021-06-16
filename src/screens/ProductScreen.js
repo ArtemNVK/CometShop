@@ -173,7 +173,6 @@ export default function ProductScreen(props) {
               {product&&
                 <ProductImgsSlider product={product}></ProductImgsSlider>
               }   
-
             </div>
 
             {/* ////////////////////////////////// SMALLSCREENS OPEN IMAGE////////////////////////////////// */}
@@ -186,12 +185,10 @@ export default function ProductScreen(props) {
             <div className={ssOpenImage ? "ss-image-slider-section ss-open-image-container" : "ss-image-slider-section"}>
             <div 
               id="img-container"
-              
-
               >
                 
                 <img
-                  id="featured"
+                  id="ss-featured"
                   className={ssOpenImage ? "ss-open-image" : "large"}
                   src={product.image}
                   alt={product.name}
@@ -200,12 +197,12 @@ export default function ProductScreen(props) {
                 
               </div>
               {product && !ssOpenImage &&
-                <ProductImgsSlider 
-                  product={product}
-                ></ProductImgsSlider>
-              }   
+                <ProductImgsSlider product={product} smallscreen={true}></ProductImgsSlider>
+              } 
             </div>
+         
             </div>
+        
               {/* ////////////////////////////////////////////////////// */}
 
             </div>
