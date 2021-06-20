@@ -106,7 +106,7 @@ export default function ProductEditScreen(props) {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
-      setImages(data);
+      setImages(data.locationArray);
       setLoadingImgsUpload(false);
     } catch (error) {
       setErrorImgsUpload(error.message);
