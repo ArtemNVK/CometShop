@@ -71,5 +71,3 @@ export const prices = [
     }
   ]
 
-  const API = 'http://localhost:8080';
-

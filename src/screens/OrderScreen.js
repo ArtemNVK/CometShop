@@ -7,7 +7,6 @@ import { deliverOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import { decreaseInStock } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { useStripe } from '@stripe/react-stripe-js';
 import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
@@ -20,7 +19,6 @@ export default function OrderScreen(props) {
   const { order, loading, error } = orderDetails;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-  const stripe = useStripe();
   const productDecreaseCIS = useSelector((state) => state.productDecreaseCIS);
   const {
     loading: loadingDecrease,
@@ -29,7 +27,6 @@ export default function OrderScreen(props) {
   } = productDecreaseCIS;
 
   document.title = `Order Info`
-  console.log(userInfo)
   const items = [];
   
   if(order){
@@ -105,41 +102,7 @@ export default function OrderScreen(props) {
   const deliverHandler = () => {
     dispatch(deliverOrder(order._id));
   };
-
-  const handleStripe = async () => {
-    const line_items = order.orderItems.map(item => {
-      return {
-        quantity: item.qty,
-        price_data: {
-          currency: 'usd',
-          unit_amount: item.price * 100, // amount is in cents
-          product_data: {
-            name: item.name,
-            description: '',
-            images: [item.image], 
-          }
-        }
-      }
-    });
-
-    const response = await Axios.post('https://cometshop.herokuapp.com/api/stripe/create-checkout-session', {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-      body: { line_items, customer_email: userInfo.email, orderId }
-    });
-
-    const { sessionId } = response;
-    const { error } = await stripe.redirectToCheckout({
-      sessionId
-    });
-    
-    if (error) {
-      console.log(error);
-    }
-  }
-
+  
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
@@ -249,7 +212,7 @@ export default function OrderScreen(props) {
                   </div>
                 </div>
               </li>
-              {!order.isPaid && order.paymentMethod === 'PayPal' ? (
+              {!order.isPaid && (
                 <li>
                   {!sdkReady ? (
                     <LoadingBox></LoadingBox>
@@ -267,14 +230,7 @@ export default function OrderScreen(props) {
                     </>
                   )}
                 </li>
-                ) : <div></div>
-              }
-              {!order.isPaid && order.paymentMethod === 'Stripe' ? (
-                <li>
-                   <button onClick={handleStripe}>PAY ORDER</button>
-                </li>
-              ) : <div></div>
-              }
+              )}
               {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                 <li>
                   {loadingDeliver && <LoadingBox></LoadingBox>}
