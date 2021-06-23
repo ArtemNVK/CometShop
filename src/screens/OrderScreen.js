@@ -115,7 +115,7 @@ export default function OrderScreen(props) {
           unit_amount: item.price * 100, // amount is in cents
           product_data: {
             name: item.name,
-            description: null,
+            description: '',
             images: [item.image], 
           }
         }
@@ -127,7 +127,7 @@ export default function OrderScreen(props) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${userInfo.token}`,
       },
-      body: { line_items, customer_email: userInfo.email }
+      body: { line_items, customer_email: userInfo.email, orderId }
     });
 
     const { sessionId } = response;
