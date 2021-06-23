@@ -70,3 +70,6 @@ export const prices = [
       category: 'Telescope Camera Adapter'
     }
   ]
+
+  const API = 'http://localhost:8080';
+

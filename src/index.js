@@ -5,11 +5,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './store';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe('sk_test_51J4nnWCGsijMYQNuWyR4yxIlrpYU4ZoliYSgbNebAu9keqJ00xliWtZuy1lvKSCHl9wjfqIn1rsBlQ0XUR5ZDKgs00Rj6DGtJv');
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <Elements stripe={stripePromise}>
+        <App />
+      </Elements>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
