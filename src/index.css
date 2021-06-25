@@ -836,6 +836,71 @@ img.large {
 
 /*  */
 
+/* Attributes & Features */
+
+.attributes-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.attributes-container .dl-container {
+  width: 100%;
+}
+
+.dl:not(.db7) {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.dl {
+  display: flex;
+  margin-bottom: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.dl:not(.db7) .dt, .dl:not(.db7) .dd {
+  width: 40%;
+}
+
+.dt {
+  color: #5a6c7d;
+}
+.dt-span {
+  padding-right: 3px;
+  background: #fff;
+  position: relative;
+  display: inline;
+  align-items: flex-start;
+}
+.dt, .dd {
+  position: relative;
+}
+.dt, .dd {
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  display: block;
+  word-break: break-word;
+}
+
+.dt::before{
+  content: "";
+  display: block;
+  left: 0; 
+  bottom: .2em;
+  margin-left: 5rem;
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px dotted #b3bcc5;
+}
+
+.dd {
+  padding: 0 10px 0 3px;
+}
+
+/*  */
 /* Image Zoom */
 
 #featured {

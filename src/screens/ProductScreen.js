@@ -115,6 +115,21 @@ export default function ProductScreen(props) {
 
   // END OF THE IMAGE ZOOM SECTION
 
+  const getDlContent = dlArray => {
+    let content = [];
+    for (let i = 0; i < dlArray.length; i++) {
+      content.push(
+        <dl class="dl">
+          <dt class="dt">
+            <span class="dt-span">{dlArray[i++]}</span> 
+          </dt>
+          <dd class="dd">{dlArray[i]}</dd> 
+        </dl>
+      );
+    }
+    return content;
+  };
+
   return (
     <div>
       
@@ -226,6 +241,16 @@ export default function ProductScreen(props) {
                   <span className="productScreen__titles">Description:</span>
                   <p>{product.description}</p>
                 </li>
+                {product.attributesList.length > 0 &&
+                <li>
+                  <span className="productScreen__titles">Attributes & Features:</span>
+                    <div class="attributes-container">
+                      <div class="dl-container">
+                        {getDlContent(product.attributesList)}
+                      </div>
+                    </div>
+                </li>
+                }
               </ul>
             </div>
             <div className="col-1">
