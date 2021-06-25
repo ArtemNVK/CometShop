@@ -40,6 +40,7 @@ export default function ProductEditScreen(props) {
       setName(product.name);
       setPrice(product.price);
       setImage(product.image);
+      setImages(product.previewImgs);
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setBrand(product.brand);
@@ -47,22 +48,6 @@ export default function ProductEditScreen(props) {
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
   
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(
-      updateProduct({
-        _id: productId,
-        name,
-        price,
-        image,
-        previewImgs: images,
-        category,
-        brand,
-        countInStock,
-        description
-      })
-    );
-  };
 
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState('');
@@ -113,6 +98,25 @@ export default function ProductEditScreen(props) {
       setLoadingImgsUpload(false);
     }
   };
+
+    const submitHandler = (e) => {
+      e.preventDefault();
+        dispatch(
+          updateProduct({
+            _id: productId,
+            name,
+            price,
+            image,
+            previewImgs: images,
+            category,
+            brand,
+            countInStock,
+            description
+          })
+        );
+    };
+  
+ 
 
 
   return (
