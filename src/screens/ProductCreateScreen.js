@@ -64,6 +64,25 @@ export default function ProductCreateScreen(props) {
     }
   };
 
+  const addPreviewImg = async (e) => {
+    const file = e.target.files[0];
+    const bodyFormData = new FormData();
+    bodyFormData.append('image', file);
+    try {
+      const { data } = await Axios.post('https://cometshop.herokuapp.com/api/uploads', bodyFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      });
+      let newArray = images;
+      newArray.push(data.location);
+      setImages([...newArray]);
+    } catch (error) {
+      setErrorUpload(error.message);
+    }
+  };
+
   const uploadImgsHandler = async (e) => {
     const files = Array.from(e.target.files);
     const bodyFormData = new FormData();
@@ -238,6 +257,14 @@ export default function ProductCreateScreen(props) {
                   )
                 })
                 }
+                <label id="addPrImg" htmlFor="prevImgFile"><BsPlusCircle /></label>
+                <input
+                  type="file"
+                  id="prevImgFile"
+                  label="Choose Image"
+                  style={{display: "none"}}
+                  onChange={addPreviewImg}
+                ></input>
               </div>
             </div>
             }
