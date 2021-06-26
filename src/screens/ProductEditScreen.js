@@ -127,6 +127,13 @@ export default function ProductEditScreen(props) {
     setAttributes(newArray);
   }
 
+  const handleDeletePreviewImg = (e, img) => {
+    let newArray = images;
+    let prevImg = newArray.indexOf(img);
+    newArray.splice(prevImg, 1);
+    setImages([...newArray]);
+  }
+
   const getDlContent = dlArray => {
     let content = [];
     for (let i = 0; i < dlArray.length; i++) {
@@ -170,6 +177,7 @@ export default function ProductEditScreen(props) {
     }
     return content;
   };
+
 
     const submitHandler = (e) => {
       e.preventDefault();
@@ -249,6 +257,22 @@ export default function ProductEditScreen(props) {
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
             </div>
+            {images.length > 0 &&
+            <div>
+              Preview Images
+              <div className="create-product-previewImgs-display">
+                {images.map(prImg => {
+                  return (
+                    <div className="create-product-previewImgs-img-container">
+                      <div id="create-product-attribute-delete" onClick={(e, img) => handleDeletePreviewImg(e, prImg)}></div>
+                      <img className="create-product-previewImgs-img" src={prImg} alt="Preview Image" />
+                    </div>
+                  )
+                })
+                }
+              </div>
+            </div>
+            }
             <div>
               <label htmlFor="imageFiles">Preview Images</label>
               <input

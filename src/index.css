@@ -335,7 +335,7 @@ img.large {
 }
 /* Form */
 .form {
-  max-width: 60rem;
+  max-width: 600px;
   margin: 0 auto;
   color: #292F36;
 }
@@ -1054,6 +1054,23 @@ img.large {
 .create-product-edit-attribute-input:focus {
   outline: none !important;
 }
+.create-product-previewImgs-display{
+  display: flex;
+  width: inherit;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.create-product-previewImgs-img-container {
+  margin: 2rem;
+}
+.create-product-previewImgs-img {
+  width: 70px;
+  height: 100px;
+  cursor: pointer;
+}
+
+/*  */
 
 .smallscreens-navbar-container,
 .smallscreens-navbar-open-sidebar,
