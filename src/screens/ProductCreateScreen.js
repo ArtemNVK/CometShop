@@ -5,6 +5,7 @@ import { detailsProduct, createProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
+import { BsPlusCircle } from 'react-icons/bs';
 
 export default function ProductCreateScreen(props) {
   document.title = "Create New Products"
@@ -19,6 +20,16 @@ export default function ProductCreateScreen(props) {
   const productCreate = useSelector((state) => state.productCreate);
   const { loading: loadingCreate, error: errorCreate, success: successCreate, product } = productCreate;
   const dispatch = useDispatch();
+  const [loadingUpload, setLoadingUpload] = useState(false);
+  const [errorUpload, setErrorUpload] = useState('');
+  const [loadingImgsUpload, setLoadingImgsUpload] = useState(false);
+  const [errorImgsUpload, setErrorImgsUpload] = useState('');
+  const [attribute, setAttribute] = useState('');
+  const [attributeValue, setAttributeValue] = useState('');
+  const [attributes, setAttributes] = useState([]);
+  const [checkAtrEmpty, setCheckAtrEmpty] = useState(false);
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
 
   useEffect(() => {
     if (successCreate) {
@@ -30,14 +41,6 @@ export default function ProductCreateScreen(props) {
     
   }, [product, dispatch, successCreate, props.history, createProduct]);
   
-
-  const [loadingUpload, setLoadingUpload] = useState(false);
-  const [errorUpload, setErrorUpload] = useState('');
-  const [loadingImgsUpload, setLoadingImgsUpload] = useState(false);
-  const [errorImgsUpload, setErrorImgsUpload] = useState('');
-
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
   
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
@@ -84,7 +87,71 @@ export default function ProductCreateScreen(props) {
     }
   };
 
+  const handleAddAttribute = () => {
+    if(attribute === '' || attributeValue === '') {
+      setCheckAtrEmpty(true);
+    } else {
+      attributes.push(attribute);
+      attributes.push(attributeValue);
+      setAttribute('');
+      setAttributeValue('');
+      setCheckAtrEmpty(false);
+    }
+  }
 
+  const handleDeleteAttribute = (e, x, y) => {
+    let newArray = attributes;
+    let dt = newArray.indexOf(y);
+    let dd = newArray.indexOf(x);
+    newArray.splice(dd, 2);
+    let dl = e.target.parentNode;
+    dl.style.display = "none";
+    setAttributes(newArray);
+  }
+
+  const getDlContent = dlArray => {
+    let content = [];
+    for (let i = 0; i < dlArray.length; i++) {
+      content.push(
+        <dl class="dl" id={i}>
+          <dt class="create-product-dt">
+            <textarea 
+              class="create-product-edit-attribute-input" 
+              value={dlArray[i++]}
+              onChange={(e) => {
+                setAttribute(e.target.value)
+                let index = attributes.indexOf(dlArray[i++]);
+                if(index) {
+                  attributes.splice(index - 1, 1, e.target.value)
+                }
+              }}
+              onBlur={() => {
+                setAttribute('');
+              }}
+            ></textarea> 
+          </dt>
+          <dd class="dd">
+            <textarea 
+              class="create-product-edit-attribute-input" 
+              value={dlArray[i]}
+              onChange={(e) => {
+                setAttributeValue(e.target.value)
+                let index = attributes.indexOf(dlArray[i]);
+                if(index) {
+                  attributes.splice(index, 1, e.target.value)
+                }
+              }}
+              onBlur={() => {
+                setAttributeValue('')
+              }}
+            ></textarea>
+          </dd>
+          <div id="create-product-attribute-delete" onClick={(e, x, y) => handleDeleteAttribute(e, dlArray[i++], dlArray[i])} ></div>
+        </dl>
+      );
+    }
+    return content;
+  };
   const createHandler = (e) => {
     e.preventDefault();
     dispatch(createProduct({
@@ -92,6 +159,7 @@ export default function ProductCreateScreen(props) {
         price: price,
         image: image,
         previewImgs: images,
+        attributesList: attributes,
         category: category,
         brand: brand,
         countInStock: countInStock,
@@ -206,6 +274,37 @@ export default function ProductCreateScreen(props) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
+            </div>
+            <div>
+              <label htmlFor="attribute">Attributes</label>
+              <div class="attributes-container">
+                <div class="dl-container">
+                  {getDlContent(attributes)}
+                </div>
+              </div>
+              <div id="create-product-attributes">
+                <input
+                  id="attribute"
+                  type="text"
+                  placeholder="Enter attribute"
+                  value={attribute}
+                  onChange={(e) => setAttribute(e.target.value)}
+                ></input>
+                <input
+                  id="attributeValue"
+                  type="text"
+                  placeholder="Enter value"
+                  value={attributeValue}
+                  onChange={(e) => setAttributeValue(e.target.value)}
+                ></input>
+                <BsPlusCircle 
+                  id="create-product-add-sign" 
+                  onClick={handleAddAttribute} 
+                  />
+              </div>
+              {checkAtrEmpty &&
+                <MessageBox variant="danger">Each attribute must have a value (and vice versa)!</MessageBox>
+              }
             </div>
             <div>
               <label></label>

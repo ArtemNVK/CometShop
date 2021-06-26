@@ -1003,6 +1003,58 @@ img.large {
 }
 /*  */
 
+#create-product-attributes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#create-product-add-sign {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+}
+#create-product-attribute-delete {
+  width: 0.3em;
+  height: 0.3em;
+  position: relative;
+  font-family: helvetica, arial, sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  align-self: center;
+}
+#create-product-attribute-delete::after {
+  content: 'X';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%) scaleX(1);
+  transform: translate(-50%,-50%) scaleX(1);
+}
+.create-product-edit-attribute-input {
+  padding-right: 3px !important;
+  background: transparent;
+  position: relative !important;
+  display: inline !important;
+  align-items: flex-start !important;
+  border: none;
+  resize: none;
+}
+.create-product-dt {
+  position: relative;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  display: block;
+  word-break: break-word;
+}
+.create-product-edit-attribute-input:hover {
+  border: none !important;
+}
+.create-product-edit-attribute-input:focus {
+  outline: none !important;
+}
+
 .smallscreens-navbar-container,
 .smallscreens-navbar-open-sidebar,
 .smallscreens-navbar-signin,

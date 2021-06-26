@@ -5,6 +5,7 @@ import { detailsProduct, updateProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
+import { BsPlusCircle } from 'react-icons/bs';
 
 export default function ProductEditScreen(props) {
   document.title = "Edit Product"
@@ -17,6 +18,10 @@ export default function ProductEditScreen(props) {
   const [countInStock, setCountInStock] = useState('');
   const [brand, setBrand] = useState('');
   const [description, setDescription] = useState('');
+  const [attribute, setAttribute] = useState('');
+  const [attributeValue, setAttributeValue] = useState('');
+  const [attributes, setAttributes] = useState([]);
+  const [checkAtrEmpty, setCheckAtrEmpty] = useState(false);
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -41,6 +46,7 @@ export default function ProductEditScreen(props) {
       setPrice(product.price);
       setImage(product.image);
       setImages(product.previewImgs);
+      setAttributes(product.attributesList)
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setBrand(product.brand);
@@ -99,6 +105,72 @@ export default function ProductEditScreen(props) {
     }
   };
 
+  const handleAddAttribute = () => {
+    if(attribute === '' || attributeValue === '') {
+      setCheckAtrEmpty(true);
+    } else {
+      attributes.push(attribute);
+      attributes.push(attributeValue);
+      setAttribute('');
+      setAttributeValue('');
+      setCheckAtrEmpty(false);
+    }
+  }
+
+  const handleDeleteAttribute = (e, x, y) => {
+    let newArray = attributes;
+    let dt = newArray.indexOf(y);
+    let dd = newArray.indexOf(x);
+    newArray.splice(dd, 2);
+    let dl = e.target.parentNode;
+    dl.style.display = "none";
+    setAttributes(newArray);
+  }
+
+  const getDlContent = dlArray => {
+    let content = [];
+    for (let i = 0; i < dlArray.length; i++) {
+      content.push(
+        <dl class="dl" id={i}>
+          <dt class="create-product-dt">
+            <textarea 
+              class="create-product-edit-attribute-input" 
+              value={dlArray[i++]}
+              onChange={(e) => {
+                setAttribute(e.target.value)
+                let index = attributes.indexOf(dlArray[i++]);
+                if(index) {
+                  attributes.splice(index - 1, 1, e.target.value)
+                }
+              }}
+              onBlur={() => {
+                setAttribute('');
+              }}
+            ></textarea> 
+          </dt>
+          <dd class="dd">
+            <textarea 
+              class="create-product-edit-attribute-input" 
+              value={dlArray[i]}
+              onChange={(e) => {
+                setAttributeValue(e.target.value)
+                let index = attributes.indexOf(dlArray[i]);
+                if(index) {
+                  attributes.splice(index, 1, e.target.value)
+                }
+              }}
+              onBlur={() => {
+                setAttributeValue('')
+              }}
+            ></textarea>
+          </dd>
+          <div id="create-product-attribute-delete" onClick={(e, x, y) => handleDeleteAttribute(e, dlArray[i++], dlArray[i])} ></div>
+        </dl>
+      );
+    }
+    return content;
+  };
+
     const submitHandler = (e) => {
       e.preventDefault();
         dispatch(
@@ -108,6 +180,7 @@ export default function ProductEditScreen(props) {
             price,
             image,
             previewImgs: images,
+            attributesList: attributes,
             category,
             brand,
             countInStock,
@@ -230,6 +303,37 @@ export default function ProductEditScreen(props) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
+            </div>
+            <div>
+              <label htmlFor="attribute">Attributes</label>
+              <div class="attributes-container">
+                <div class="dl-container">
+                  {getDlContent(attributes)}
+                </div>
+              </div>
+              <div id="create-product-attributes">
+                <input
+                  id="attribute"
+                  type="text"
+                  placeholder="Enter attribute"
+                  value={attribute}
+                  onChange={(e) => setAttribute(e.target.value)}
+                ></input>
+                <input
+                  id="attributeValue"
+                  type="text"
+                  placeholder="Enter value"
+                  value={attributeValue}
+                  onChange={(e) => setAttributeValue(e.target.value)}
+                ></input>
+                <BsPlusCircle 
+                  id="create-product-add-sign" 
+                  onClick={handleAddAttribute} 
+                  />
+              </div>
+              {checkAtrEmpty &&
+                <MessageBox variant="danger">Each attribute must have a value (and vice versa)!</MessageBox>
+              }
             </div>
             <div>
               <label></label>
