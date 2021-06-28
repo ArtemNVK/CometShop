@@ -30,6 +30,7 @@ import ProductCreateScreen from './screens/ProductCreateScreen';
 function App() {
   const cart = useSelector((state) => state.cart);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+  const [small, setSmall] = useState(false);
   const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -45,6 +46,11 @@ function App() {
   } = productCategoryList;
   useEffect(() => {
     dispatch(listProductCategories())
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () =>
+        setSmall(window.pageYOffset > 200)
+      );
+    }
   }, []);
 
 
@@ -52,7 +58,7 @@ function App() {
   return (
     <Router>
       <div className="grid-container">
-        <header className="row header">
+        <header className="row header" id={small ? "small" : ''}>
           <div>
             <Link id="shop-title" className="brand" to="/">
               CometShop
