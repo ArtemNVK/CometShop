@@ -1072,12 +1072,12 @@ a.selected-filter:hover {
 
 .images-slide-active{
 	opacity: 1;
-  border: 1px solid #292F36;
+  border: 1px solid #cb11ab;
 }
 
 .ss-images-slide-active{
 	opacity: 1;
-  border: 1px solid #292F36;
+  border: 1px solid #cb11ab;
 }
 
 #images-slide-wrapper{
