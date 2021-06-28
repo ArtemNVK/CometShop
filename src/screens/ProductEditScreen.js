@@ -221,7 +221,7 @@ export default function ProductEditScreen(props) {
 
   return (
     <div>
-      <form className="form" onSubmit={submitHandler}>
+      <form className="form editscreen" onSubmit={submitHandler}>
         <div>
           <h1>Edit Product {productId}</h1>
         </div>
@@ -357,8 +357,8 @@ export default function ProductEditScreen(props) {
             </div>
             <div>
               <label htmlFor="attribute">Attributes</label>
-              <div class="attributes-container">
-                <div class="dl-container">
+              <div className="ss attributes-container">
+                <div className="ss dl-container">
                   {getDlContent(attributes)}
                 </div>
               </div>

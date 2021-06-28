@@ -139,7 +139,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="productScreen__container">
-            <button id="smallscreens-back-btn" onClick={() => history.goBack(1)}><IoIosArrowBack></IoIosArrowBack></button>
+            <button id="smallscreens-back-btn" onClick={() => history.goBack(1)}><i class="fa fa-chevron-left"></i></button>
             <div className="breadcrumbs hide">
               <button id="back__btn" onClick={() => history.goBack(1)}>Back</button>
               <ul>
@@ -161,7 +161,6 @@ export default function ProductScreen(props) {
               </ul>
             </div>
           <div className="row top">
-            {/* <h1 id="product_name">{product.name}</h1> */}
             <div className="col-2 center">
 
                 <div className={dbclick ? "image-slider-section open-image-container" : "image-slider-section"}>
