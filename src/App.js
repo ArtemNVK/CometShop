@@ -26,6 +26,7 @@ import { listProductCategories } from './actions/productActions';
 import MessageBox from './components/MessageBox';
 import LoadingBox from './components/LoadingBox';
 import ProductCreateScreen from './screens/ProductCreateScreen';
+import PageNotFound from './screens/PageNotFound';
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <Router>
+      <Switch>
       <div className="grid-container">
         <header className="row header" id={small ? "small" : ''}>
           <div>
@@ -249,6 +251,7 @@ function App() {
         onClick={() => setSidebarIsOpen(false)}
         ></div>
         <main>
+          <Route exact path="/" component={HomeScreen} ></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/product/:id" component={ProductScreen} exact></Route>
           <Route
@@ -305,10 +308,10 @@ function App() {
             path="/user/:id/edit"
             component={UserEditScreen}
           ></AdminRoute>
-          <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">CometShop 2021</footer>
       </div>
+      </Switch>
     </Router>
   );
 }

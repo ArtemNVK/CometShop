@@ -375,7 +375,7 @@ export default function ProductScreen(props) {
                   </form>
                 ) : !userInfo ? (
                   <MessageBox>
-                    Please <Link to="/signin">Sign In</Link> to write a review
+                    Please <Link to="/signin"><span className="call-to-action">Sign In</span></Link> to write a review
                   </MessageBox>
                 )
                   : !userPurchases.includes(productId)  ?
