@@ -69,6 +69,14 @@ export default function ProductImgsSlider({product, smallscreen}) {
                     onClick={() => handleClickLeft()}
                 />
 				<div id="ss-product-images-slider">
+                    {product && 
+                        <img 
+                            className="product-images-thumbnail images-slide-active" 
+                            src={product.image} 
+                            onClick={e => handleThumbnail(e)}
+                            onMouseOver={e => handleThumbnail(e)}
+                        />
+                    }
                     {product &&
                         product.previewImgs.map(image => {
                             return (
