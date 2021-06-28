@@ -17,11 +17,13 @@ export default function SearchBox(props) {
                     type="text" 
                     name="q"
                     id="q"
-                    placeholder="Search CometShop"
+                    placeholder='Search CometShop'
+                    onFocus={(e) => e.target.placeholder = ""} 
+                    onBlur={(e) => e.target.placeholder = "Search CometShop"}
                     onChange={e => setName(e.target.value)}
-                    />
+                    ></input>
                     <button id="search-btn" type="submit">
-                        <i className="fa fa-search"></i>
+                        <i id="search-icon" className="fa fa-search"></i>
                     </button>
                 </div>
             </form>
