@@ -9,7 +9,7 @@ import Rating from '../components/Rating';
 import { prices, ratings } from '../utils';
 import Pagination from '../components/Pagination';
 import { BsFilterLeft } from 'react-icons/bs';
-
+import Spinner from '../components/Spinner';
  
 export default function SearchScreen(props) {
   document.title = "Search"
@@ -240,7 +240,7 @@ export default function SearchScreen(props) {
 
 
           {loading ? (
-            <LoadingBox></LoadingBox>
+            <Spinner />
           ) : error ? (
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (

@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 import PromotionsCarousel from '../components/PromotionsCarousel';
 import { sliderData } from '../utils';
+import Spinner from '../components/Spinner';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export default function HomeScreen() {
          <PromotionsCarousel slides={sliderData}></PromotionsCarousel>
       </div>
       {loading ? (
-        <LoadingBox></LoadingBox>
+        <Spinner type={"large"}></Spinner>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (

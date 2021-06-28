@@ -11,6 +11,7 @@ import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
 } from '../constants/orderConstants';
+import Spinner from '../components/Spinner';
 
 export default function OrderScreen(props) {
   const orderId = props.match.params.id;
@@ -104,7 +105,7 @@ export default function OrderScreen(props) {
   };
   
   return loading ? (
-    <LoadingBox></LoadingBox>
+    <Spinner />
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
