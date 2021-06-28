@@ -161,64 +161,69 @@ export default function ProductScreen(props) {
               </ul>
             </div>
           <div className="row top">
-
+            {/* <h1 id="product_name">{product.name}</h1> */}
             <div className="col-2 center">
 
-            <div className={dbclick ? "image-slider-section open-image-container" : "image-slider-section"}>
-            <div 
-              id="img-container"
-              onMouseOver={() => imageZoom('featured')}
-              onMouseOut={() => hideLens()}
-              onDoubleClick={() => setDbclick(true)}
-
-              >
-                <div className={dbclick ? "open-image-bg" : ""} onClick={() => setDbclick(false)}></div>
+                <div className={dbclick ? "image-slider-section open-image-container" : "image-slider-section"}>
                 <div 
-                id="lens"
-                style={isLens ? {display: "block"} : {display: "none"}}
-                ></div>
-                <img
-                  id="featured"
-                  className={dbclick ? "open-image" : "large"}
-                  src={product.image}
-                  alt={product.name}
-                ></img>
-                
-              </div>
-              {product&&
-                <ProductImgsSlider product={product}></ProductImgsSlider>
-              }   
-            </div>
+                  id="img-container"
+                  onMouseOver={() => imageZoom('featured')}
+                  onMouseOut={() => hideLens()}
+                  onDoubleClick={() => setDbclick(true)}
 
-            {/* ////////////////////////////////// SMALLSCREENS OPEN IMAGE////////////////////////////////// */}
-            <div className={ssOpenImage ? "ss-open-image-bg" : ""}>
-            <AiOutlineClose 
-                  id="ss-close-image" 
-                  style={ssOpenImage ? {display: "block"} : {display: "none"}} 
-                  onClick={() => setSmallscreenOpenImageClick(false)}
-            />
-            <div className={ssOpenImage ? "ss-image-slider-section ss-open-image-container" : "ss-image-slider-section"}>
-            <div 
-              id="img-container"
-              >
-                
-                <img
-                  id="ss-featured"
-                  className={ssOpenImage ? "ss-open-image" : "large"}
-                  src={product.image}
-                  alt={product.name}
-                  onClick={() => setSmallscreenOpenImageClick(true)}
-                ></img>
-                
-              </div>
-              {product && !ssOpenImage &&
-                <ProductImgsSlider product={product} smallscreen={true}></ProductImgsSlider>
-              } 
-            </div>
-         
-            </div>
-        
-              {/* ////////////////////////////////////////////////////// */}
+                  >
+                    <div className={dbclick ? "open-image-bg" : ""} onClick={() => setDbclick(false)}></div>
+                    <div 
+                    id="lens"
+                    style={isLens ? {display: "block"} : {display: "none"}}
+                    ></div>
+                    <img
+                      id="featured"
+                      className={dbclick ? "open-image" : "large"}
+                      src={product.image}
+                      alt={product.name}
+                    ></img>
+                    
+                  </div>
+                  {product&&
+                    <ProductImgsSlider product={product}></ProductImgsSlider>
+                  }   
+                </div>
+
+                {/* ////////////////////////////////// SMALLSCREENS OPEN IMAGE////////////////////////////////// */}
+                <div className={ssOpenImage ? "ss-open-image-bg" : ""}>
+                <AiOutlineClose 
+                      id="ss-close-image" 
+                      style={ssOpenImage ? {display: "block"} : {display: "none"}} 
+                      onClick={() => setSmallscreenOpenImageClick(false)}
+                />
+                <div className={ssOpenImage ? "ss-image-slider-section ss-open-image-container" : "ss-image-slider-section"}>
+                <div 
+                  id="img-container"
+                  >
+                    
+                    <img
+                      id="ss-featured"
+                      className={ssOpenImage ? "ss-open-image" : "large"}
+                      src={product.image}
+                      alt={product.name}
+                      onClick={() => setSmallscreenOpenImageClick(true)}
+                    ></img>
+                    
+                  </div>
+                  {product && !ssOpenImage &&
+                    <ProductImgsSlider product={product} smallscreen={true}></ProductImgsSlider>
+                  } 
+                </div>
+            
+                </div>
+            
+                  {/* ////////////////////////////////////////////////////// */}
+
+                  <div className="product-description">
+                    <span className="productScreen__titles">Description:</span>
+                    <p>{product.description}</p>
+                  </div>
 
             </div>
 
@@ -237,7 +242,7 @@ export default function ProductScreen(props) {
                   </a>
                 </li>
                 <li id="productScreen__price">Price : $ {product.price.toFixed(2)}</li>
-                <li >
+                <li className="smallscreens-description-section">
                   <span className="productScreen__titles">Description:</span>
                   <p>{product.description}</p>
                 </li>
