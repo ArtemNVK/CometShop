@@ -71,7 +71,7 @@ export default function ProductImgsSlider({product, smallscreen}) {
 				<div id="ss-product-images-slider">
                     {product && 
                         <img 
-                            className="product-images-thumbnail images-slide-active" 
+                            className="ss-product-images-thumbnail ss-images-slide-active" 
                             src={product.image} 
                             onClick={e => handleThumbnail(e)}
                             onMouseOver={e => handleThumbnail(e)}
