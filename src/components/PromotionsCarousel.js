@@ -21,12 +21,14 @@ export default function PromotionsCarousel({slides}) {
 
     return (
         <section className="slider">
-            <FaArrowAltCircleLeft 
+            <i class="fa fa-arrow-left arrow left" onClick={prevSlide}></i>
+            <i class="fa fa-arrow-right arrow right" onClick={nextSlide}></i>
+            {/* <FaArrowAltCircleLeft 
                 className="arrow left" 
                 onClick={prevSlide}/>
             <FaArrowAltCircleRight
                 className="arrow right" 
-                onClick={nextSlide}/>
+                onClick={nextSlide}/> */}
             {sliderData.map((slide, index) => {
                 return (
                     

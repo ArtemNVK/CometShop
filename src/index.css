@@ -896,8 +896,6 @@ a.selected-filter:hover {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.05);
-  /* border for sample promo */
-  border: 2px #292F36 solid;
 }
 
  .promo-carousel-img {
@@ -911,20 +909,34 @@ a.selected-filter:hover {
  } 
  
 .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  font-size: 5rem;
-  color: #ffffff !important;
+  height: 5rem;
+  width: 5rem;
+  color: #000 !important;
   z-index: 500;
   cursor: pointer;
-  opacity: 0.3;
-  background: #000 !important;
+  opacity: 0.5;
+  background-color: transparent;
+  background: #fff;
   box-shadow: 0 0 12px rgb(0 0 0 / 10%);
   border-radius: 100%;
   border: none !important;
 }
+.fa-arrow-left::before {
+  font-size: 3rem;
+}
+.fa-arrow-right::before {
+  font-size: 3rem;
+}
 .arrow:hover {
   opacity: 1;
-  background: #cb11ab !important;  
+  background: #fff !important;  
+}
+.arrow:hover::before {
+  color: #cb11ab;
 }
  .arrow.right {
   top: 40%;
@@ -949,7 +961,7 @@ a.selected-filter:hover {
    height: 1rem;
    opacity: 0.5;
    background-color: transparent;
-   border: 3px #292F36 solid;
+   border: 3px #cb11ab solid;
    border-radius: 50%;
    margin: 0.3rem;
   }
@@ -957,14 +969,14 @@ a.selected-filter:hover {
   .promo-carousel-dots.active {
     opacity: 0.7;
     background-color: transparent;
-    border: 4px #292F36 solid;
+    border: 4px #cb11ab solid !important;
    }
  
 
  .promo-carousel-dots:hover {
    opacity: 1;
    background-color: transparent;
-   border: 4px #292F36 solid;
+   border: 4px #cb11ab solid;
    cursor: pointer;
    transition: ease;
   }
