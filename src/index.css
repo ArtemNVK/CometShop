@@ -1958,6 +1958,10 @@ img.large {
   height: 50px;
   border: none;
 }
+.resultsNum {
+  position: relative;
+  left: 2rem;
+}
 
 }
  
