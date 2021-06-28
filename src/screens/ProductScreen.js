@@ -233,7 +233,13 @@ export default function ProductScreen(props) {
                   <h1 id="product_name">{product.name}</h1>
                 </li>
                 <li>
-                  <a href="#reviews">
+                  <a 
+                    style={{"cursor":"pointer"}} 
+                    onClick={() => {
+                      const anchor = document.querySelector('#reviews-link')
+                      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                    }}
+                  >
                   <Rating
                     rating={product.rating}
                     numReviews={product.numReviews}
@@ -313,7 +319,7 @@ export default function ProductScreen(props) {
               </div>
             </div>
           </div>
-          <div id="reviews">
+          <div id="reviews-link">
             <h2 className="productScreen__titles reviews">Reviews</h2>
             {product.reviews.length === 0 && (
               <MessageBox>There is no reviews</MessageBox>
