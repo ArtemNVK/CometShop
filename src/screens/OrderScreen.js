@@ -153,13 +153,16 @@ export default function OrderScreen(props) {
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
-                      <div className="row">
-                        <div>
+                      <div className="row cart-item-container">
+                        <div className="cartScreen-item-img ">
                           <img
                             src={item.image}
                             alt={item.name}
-                            className="small"
+                            className="small-img"
                           ></img>
+                        </div>
+                        <div className="cartScreen-item-price">
+                          {item.qty} x ${item.price.toFixed(2)} = ${(item.qty * item.price.toFixed(2)).toFixed(2)}
                         </div>
                         <div className="min-30">
                           <Link to={`/product/${item.product}`}>
@@ -167,9 +170,7 @@ export default function OrderScreen(props) {
                           </Link>
                         </div>
 
-                        <div>
-                          {item.qty} x ${item.price.toFixed(2)} = ${(item.qty * item.price.toFixed(2)).toFixed(2)}
-                        </div>
+                       
                       </div>
                     </li>
                   ))}
@@ -179,7 +180,7 @@ export default function OrderScreen(props) {
           </ul>
         </div>
         <div className="col-1" id="orderSummary">
-          <div>
+          <div className="cartscreen-proceed-btn-container">
             <ul>
               <li>
                 <h2>Order Summary</h2>

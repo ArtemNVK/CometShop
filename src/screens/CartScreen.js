@@ -40,14 +40,15 @@ export default function CartScreen(props) {
           <ul>
             {cartItems.map((item) => (
               <li key={item.product}>
-                <div className="row">
-                  <div>
+                <div className="row cart-item-container">
+                  <div className="cartScreen-item-img">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="small"
+                      className="small-img"
                     ></img>
                   </div>
+                  <div className="cartScreen-item-price">${item.price.toFixed(2)}</div>
                   <div className="min-30 smallscreens-cart-itemname">
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </div>
@@ -67,9 +68,9 @@ export default function CartScreen(props) {
                       ))}
                     </select>
                   </div>
-                  <div>${item.price.toFixed(2)}</div>
                   <div>
                     <button
+                      className="cart-item-delete-btn"
                       type="button"
                       onClick={() => removeFromCartHandler(item.product)}
                     >
@@ -84,9 +85,10 @@ export default function CartScreen(props) {
           <div className="cartscreen-proceed-btn-container">
             <ul>
               <li>
+                
                 <h2>
                   Total ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $ 
-                    {Math.floor(cartItems.reduce((a, c) => a + c.price * c.qty, 0) * 100) / 100}
+                    {(Math.floor(cartItems.reduce((a, c) => a + c.price * c.qty, 0) * 100) / 100).toFixed(2)}
                 </h2>
               </li>
               <li>

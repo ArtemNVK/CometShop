@@ -63,13 +63,16 @@ export default function PlaceOrderScreen(props) {
                 <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
-                      <div className="row">
-                        <div>
+                      <div className="row cart-item-container">
+                        <div className="cartScreen-item-img">
                           <img
                             src={item.image}
                             alt={item.name}
-                            className="small"
+                            className="small-img"
                           ></img>
+                        </div>
+                        <div className="cartScreen-item-price">
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
                         </div>
                         <div className="min-30">
                           <Link to={`/product/${item.product}`}>
@@ -77,9 +80,6 @@ export default function PlaceOrderScreen(props) {
                           </Link>
                         </div>
 
-                        <div>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
-                        </div>
                       </div>
                     </li>
                   ))}
@@ -89,7 +89,7 @@ export default function PlaceOrderScreen(props) {
           </ul>
         </div>
         <div className="col-1">
-          <div>
+          <div className="cartscreen-proceed-btn-container">
             <ul>
               <li>
                 <h2>Order Summary</h2>
