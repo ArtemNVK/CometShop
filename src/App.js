@@ -28,6 +28,7 @@ import LoadingBox from './components/LoadingBox';
 import ProductCreateScreen from './screens/ProductCreateScreen';
 import PageNotFound from './screens/PageNotFound';
 
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
@@ -55,10 +56,8 @@ function App() {
   }, []);
 
 
-
   return (
     <Router>
-      <Switch>
       <div className="grid-container">
         <header className="row header" id={small ? "small" : ''}>
           <div>
@@ -128,7 +127,9 @@ function App() {
             </div>
 
             <div className="smallscreens-navbar-searchbar">
+              <Switch>
               <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
+              </Switch>
             </div>
 
             </>
@@ -136,7 +137,9 @@ function App() {
 
           </div>
           <div className="searchbar">
+            <Switch>
             <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
+            </Switch>
           </div>
           <div>
             {userInfo ? (
@@ -251,6 +254,7 @@ function App() {
         onClick={() => setSidebarIsOpen(false)}
         ></div>
         <main>
+          <Switch>
           <Route exact path="/" component={HomeScreen} ></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/product/:id" component={ProductScreen} exact></Route>
@@ -308,10 +312,11 @@ function App() {
             path="/user/:id/edit"
             component={UserEditScreen}
           ></AdminRoute>
+          <Route><PageNotFound></PageNotFound></Route>
+          </Switch>
         </main>
         <footer className="row center">CometShop 2021</footer>
       </div>
-      </Switch>
     </Router>
   );
 }

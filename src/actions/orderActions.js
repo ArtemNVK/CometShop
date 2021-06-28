@@ -89,13 +89,16 @@ export const payOrder = (order, paymentResult) => async (
     dispatch({ type: ORDER_PAY_FAIL, payload: message });
   }
 };
-export const listOrderMine = () => async (dispatch, getState) => {
+export const listOrderMine = ({
+  page = 1,
+  limit = 20
+}) => async (dispatch, getState) => {
   dispatch({ type: ORDER_MINE_LIST_REQUEST });
   const {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.get('https://cometshop.herokuapp.com/api/orders/mine', {
+    const { data } = await Axios.get(`https://cometshop.herokuapp.com/api/orders/mine?page=${page}&limit=${limit}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -109,13 +112,16 @@ export const listOrderMine = () => async (dispatch, getState) => {
     dispatch({ type: ORDER_MINE_LIST_FAIL, payload: message });
   }
 };
-export const listOrders = () => async (dispatch, getState) => {
+export const listOrders = ({
+  page = 1,
+  limit = 20
+}) => async (dispatch, getState) => {
   dispatch({ type: ORDER_LIST_REQUEST });
   const {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.get(`https://cometshop.herokuapp.com/api/orders`, {
+    const { data } = await Axios.get(`https://cometshop.herokuapp.com/api/orders?page=${page}&limit=${limit}`, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
     dispatch({ type: ORDER_LIST_SUCCESS, payload: data });

@@ -125,13 +125,16 @@ export const updateUser = (user) => async (dispatch, getState) => {
     dispatch({ type: USER_UPDATE_FAIL, payload: message });
   }
 };
-export const listUsers = () => async (dispatch, getState) => {
+export const listUsers = ({
+  page = 1,
+  limit = 20
+}) => async (dispatch, getState) => {
   dispatch({ type: USER_LIST_REQUEST });
   try {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await Axios.get('https://cometshop.herokuapp.com/api/users', {
+    const { data } = await Axios.get(`https://cometshop.herokuapp.com/api/users?page=${page}&limit=${limit}`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },

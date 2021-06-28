@@ -1,26 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteOrder, listOrders } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { ORDER_DELETE_RESET } from '../constants/orderConstants';
+import Pagination from '../components/Pagination';
 
 export default function OrderListScreen(props) {
   document.title = "List of Orders"
   const orderList = useSelector((state) => state.orderList);
   const { loading, error, orders } = orderList;
   const orderDelete = useSelector((state) => state.orderDelete);
-  console.log(orders)
   const {
     loading: loadingDelete,
     error: errorDelete,
     success: successDelete,
   } = orderDelete;
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: ORDER_DELETE_RESET });
-    dispatch(listOrders());
-  }, [dispatch, successDelete]);
+    dispatch(listOrders({page}));
+  }, [dispatch, successDelete, page]);
   const deleteHandler = (order) => {
     if (window.confirm('Are you sure to delete?')) {
       dispatch(deleteOrder(order._id));
@@ -36,6 +37,7 @@ export default function OrderListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
+        <>
         <table className="table">
           <thead>
             <tr>
@@ -48,7 +50,7 @@ export default function OrderListScreen(props) {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders.results && orders.results.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
@@ -81,6 +83,14 @@ export default function OrderListScreen(props) {
             ))}
           </tbody>
         </table>
+        {orders.pageNumbers &&
+        <>
+        {orders.pageNumbers.length !== 1 &&
+        <Pagination pages={orders.pageNumbers.length} setCurrentPage={setPage} page={page}/>
+        }
+        </>
+        }
+        </>
       )}
     </div>
   );

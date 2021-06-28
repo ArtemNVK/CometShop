@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { listOrderMine } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import Pagination from '../components/Pagination';
 
 export default function OrderHistoryScreen(props) {
   document.title = "Order History"
+  const [page, setPage] = useState(1);
   const orderMineList = useSelector((state) => state.orderMineList);
   const { loading, error, orders } = orderMineList;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listOrderMine());
-  }, [dispatch]);
+    dispatch(listOrderMine({page}));
+  }, [dispatch, page]);
   return (
     <div className="orderHistory-container">
       <h1>Order History</h1>
@@ -26,6 +28,7 @@ export default function OrderHistoryScreen(props) {
         </MessageBox>
       )
         : (
+        <>
         <table className="table">
           <thead>
             <tr>
@@ -38,7 +41,7 @@ export default function OrderHistoryScreen(props) {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders.results.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
@@ -64,6 +67,14 @@ export default function OrderHistoryScreen(props) {
             ))}
           </tbody>
         </table>
+        {orders.pageNumbers &&
+          <>
+          {orders.pageNumbers.length !== 1 &&
+          < Pagination pages={orders.pageNumbers.length} setCurrentPage={setPage} page={page}/>
+          }
+          </>
+        }
+        </>
       )}
 
 

@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteUser, listUsers } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { USER_DETAILS_RESET } from '../constants/userConstants';
+import Pagination from '../components/Pagination';
 
 export default function UserListScreen(props) {
   document.title = "List of Users"
   const userList = useSelector((state) => state.userList);
   const { loading, error, users } = userList;
-
+  const [page, setPage] = useState(1);
   const userDelete = useSelector((state) => state.userDelete);
   const {
     loading: loadingDelete,
@@ -19,11 +20,11 @@ export default function UserListScreen(props) {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listUsers());
+    dispatch(listUsers({page}));
     dispatch({
       type: USER_DETAILS_RESET,
     });
-  }, [dispatch, successDelete]);
+  }, [dispatch, successDelete, page]);
   const deleteHandler = (user) => {
     if (window.confirm('Are you sure?')) {
       dispatch(deleteUser(user._id));
@@ -42,6 +43,7 @@ export default function UserListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
+        <>
         <table className="table">
           <thead>
             <tr>
@@ -53,7 +55,7 @@ export default function UserListScreen(props) {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {users.results && users.results.map((user) => (
               <tr key={user._id}>
                 <td className="smallscreens-table-td-users">{user._id}</td>
                 <td className="smallscreens-table-td-users">{user.name}</td>
@@ -79,6 +81,14 @@ export default function UserListScreen(props) {
             ))}
           </tbody>
         </table>
+        {users.pageNumbers &&
+        <>
+        {users.pageNumbers.length !== 1 &&
+          <Pagination pages={users.pageNumbers.length} setCurrentPage={setPage} page={page}/>
+        }
+        </>
+        }
+        </>
       )}
     </div>
   );

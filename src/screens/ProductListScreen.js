@@ -79,6 +79,7 @@ export default function ProductListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
+        <>
         <table className="table products">
           <thead>
             <tr>
@@ -120,6 +121,14 @@ export default function ProductListScreen(props) {
             ))}
           </tbody>
         </table>
+        {products.pageNumbers &&
+        <>
+        {products.pageNumbers.length !== 1 &&
+        <Pagination pages={products.pageNumbers.length} setCurrentPage={setPage} page={page}/>
+        }
+        </>
+        }
+        </>
       )}
 
     </div>

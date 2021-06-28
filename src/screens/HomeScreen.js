@@ -16,7 +16,6 @@ export default function HomeScreen() {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
   const [page, setPage] = useState(1);
-
   useEffect(() => {
     dispatch(listProducts({page}));
     dispatch({ type: PRODUCT_REVIEW_CREATE_FAIL_RESET });
