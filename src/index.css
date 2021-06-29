@@ -2021,6 +2021,9 @@ img.large {
     max-height: 100px;
   }
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     height: 0.5rem;
     width: 0.5rem;
   }
@@ -2035,7 +2038,7 @@ img.large {
    }
    .arrow.left {
      top: 35%;
-   }
+   } */
    .promo-carousel-dots {
      width: 0.3rem;
      height: 0.3rem;
@@ -2063,6 +2066,9 @@ img.large {
     max-height: 100px;
   }
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     height: 1rem;
     width: 1rem;
   }
@@ -2077,7 +2083,7 @@ img.large {
    }
    .arrow.left {
      top: 35%;
-   }
+   } */
    .promo-carousel-dots {
      width: 0.3rem;
      height: 0.3rem;
@@ -2113,6 +2119,9 @@ img.large {
     max-height: 130px;
   }
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     height: 1rem;
     width: 1rem;
   }
@@ -2127,7 +2136,7 @@ img.large {
   }
   .arrow.left {
     top: 35%;
-  }
+  } */
    .promo-carousel-dots {
      width: 0.8rem;
      height: 0.8rem;
@@ -2155,6 +2164,9 @@ img.large {
     max-height: 100px;
   }
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     height: 1rem;
     width: 1rem;
   }
@@ -2169,7 +2181,7 @@ img.large {
    }
    .arrow.left {
      top: 35%;
-   }
+   } */
    .promo-carousel-dots {
      width: 0.3rem;
      height: 0.3rem;
@@ -2204,8 +2216,10 @@ img.large {
 .promo-carousel-img {
   max-height: 150px;
 }
-
 .arrow {
+  display: none;
+}
+/* .arrow {
   height: 1rem;
   width: 1rem;
 }
@@ -2220,7 +2234,7 @@ img.large {
  }
  .arrow.left {
    top: 40%;
- }
+ } */
  .promo-carousel-dots {
    width: 1rem;
    height: 1rem;
@@ -2250,8 +2264,11 @@ img.large {
   }
   #search-btn {
     display: none !important;
-  }
+  }  
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     height: 1rem;
     width: 1rem;
   }
@@ -2266,7 +2283,7 @@ img.large {
    }
    .arrow.left {
      top: 35%;
-   }
+   } */
    .promo-carousel-dots {
      width: 0.3rem;
      height: 0.3rem;
@@ -2308,6 +2325,9 @@ img.large {
     max-height: 180px;
   }
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     height: 1rem;
     width: 1rem;
   }
@@ -2322,7 +2342,7 @@ img.large {
    }
    .arrow.left {
      top: 40%;
-   }
+   } */
 }
 
 @media screen and (min-width: 760px) and (max-width: 860px) {
@@ -2340,6 +2360,9 @@ img.large {
     max-height: 300px;
   }
   .arrow {
+    display: none;
+  }
+  /* .arrow {
     font-size: 5rem;
   }
    .arrow.right {
@@ -2352,7 +2375,7 @@ img.large {
    .arrow.left {
      top: 40%;
      left: 0;
-   }
+   } */
    .promo-carousel-dots {
      width: 1rem;
      height: 1rem;
