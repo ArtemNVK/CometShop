@@ -90,8 +90,8 @@ export const payOrder = (order, paymentResult) => async (
   }
 };
 export const listOrderMine = ({
-  page = 1,
-  limit = 20
+  page,
+  limit
 }) => async (dispatch, getState) => {
   dispatch({ type: ORDER_MINE_LIST_REQUEST });
   const {
