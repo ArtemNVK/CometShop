@@ -45,18 +45,20 @@ export default function ProductScreen(props) {
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
     dispatch(detailsProduct(productId));
-    dispatch(listOrderMine());
+    dispatch(listOrderMine({}));
   }, [dispatch, productId, successReviewCreate]);
 
 
   const userPurchases = [];
   
   if(orders){
-    orders.map(item => {
+    if(orders.results) {
+    orders.results.map(item => {
       item.orderItems.map(x => {
         userPurchases.push(x.product);
       })
   })
+  }
 }
 
   const addToCartHandler = () => {

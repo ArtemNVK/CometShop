@@ -13,7 +13,7 @@ export default function OrderHistoryScreen(props) {
   const { loading, error, orders } = orderMineList;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listOrderMine({page}));
+    dispatch(listOrderMine({ page }));
   }, [dispatch, page]);
   return (
     <div className="orderHistory-container">
