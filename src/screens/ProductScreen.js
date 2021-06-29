@@ -16,7 +16,7 @@ export default function ProductScreen(props) {
   const productId = props.match.params.id;
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
+  const { loading, error, product, reviews } = productDetails;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   const orderMineList = useSelector((state) => state.orderMineList);
@@ -27,8 +27,6 @@ export default function ProductScreen(props) {
     error: errorReviewCreate,
     success: successReviewCreate,
   } = productReviewCreate;
-
-  
 
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
@@ -395,9 +393,10 @@ export default function ProductScreen(props) {
               </li>
             </ul>
           </div>
-        </div>
-      )}
   
+        </div>
+          
+      )}
     </div>
   );
 }
