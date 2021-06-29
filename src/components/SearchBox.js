@@ -58,8 +58,6 @@ export default function SearchBox(props) {
         }
         setOptions(matches)
         setDisplay(true);
-
-        console.log(e.target.value)
     }
 
     const handleOnBlur = e => {
