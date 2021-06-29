@@ -35,6 +35,17 @@ export default function SearchBox(props) {
     const onChangeHandler = e => {
         setSearch(e.target.value);
         let matches;
+
+        if(e.target.value === '') {
+            setDisplay(false);
+            return;
+        }
+
+        if(options.length === 0) {
+            setDisplay(false);
+            return;
+        }
+
         if(products){
             if(products.results) {
                 if (search.length >= 0) {
@@ -47,6 +58,8 @@ export default function SearchBox(props) {
         }
         setOptions(matches)
         setDisplay(true);
+
+        console.log(e.target.value)
     }
 
     const handleOnBlur = e => {
