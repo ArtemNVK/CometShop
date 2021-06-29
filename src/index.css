@@ -935,21 +935,18 @@ a.selected-filter:hover {
  
  .slide {
   opacity: 0;
-  transition-duration: 1s ease;
 }
 .slide.active {
   height: 100%;
   width: 100%;
   opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.05);
+  transition: filter .3s linear 0s,-webkit-filter .3s linear 0s;
 }
 
  .promo-carousel-img {
    width: 100%;
    height: 100%;
    border-radius: 5px;
-   transition: filter .3s linear 0s,-webkit-filter .3s linear 0s;
  } 
  .promo-carousel-img:hover {
   filter: brightness(80%);
