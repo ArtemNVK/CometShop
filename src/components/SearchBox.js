@@ -52,15 +52,14 @@ export default function SearchBox(props) {
                         const regex = new RegExp(`${search}`, "gi");
                         return item.name.match(regex)
                     })
+                    if(matches.length === 0) {
+                        setDisplay(false);
+                        return
+                    }
                 } 
             }
         }
         setOptions(matches.splice(0, 5))
-
-        if(options.length === 0) {
-            setDisplay(false);
-            return;
-        }
 
         if(text === '') {
             setDisplay(false);
