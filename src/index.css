@@ -394,7 +394,7 @@ img.large {
   color: #000;
   padding: 1rem;
   margin-top: 3rem;
-  margin-bottom: 17rem;
+  margin-bottom: 5rem;
   box-shadow: 3px 2px 14px rgb(155, 154, 154, 0.3);
   transition: all 200ms ease-in-out;
 }
