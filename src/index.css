@@ -1126,22 +1126,26 @@ a.selected-filter:hover {
 	justify-content: center;
 	align-items: center;
 }
+
+.product-images-thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5px;
+	position: relative;
+  cursor: pointer;
+  padding: 3rem 0;
+  justify-content: center;
+  align-content: center;
+}
+
 .product-images-thumbnail{
-	object-fit: cover;
-	max-width: 150px;
-	max-height: 100px;
-	cursor: pointer;
-	opacity: 0.5;
-	margin: 5px;
+	object-fit: contain;
+  width: 70px;
+  height: 70px;
+  opacity: 0.5;
 }
-.ss-product-images-thumbnail{
-	object-fit: cover;
-	max-width: 150px;
-	max-height: 100px;
-	cursor: pointer;
-	opacity: 0.5;
-	margin: 5px;
-}
+
 
 .product-images-thumbnail:hover{
 	opacity:1;
@@ -1278,7 +1282,8 @@ a.selected-filter:hover {
   height: 500px;
   cursor: pointer;
   padding: 3rem 0;
-  /* flex: 1 1; */
+  justify-content: center;
+  align-content: center;
 }
 
 
@@ -1752,8 +1757,9 @@ footer::before {
   width: 100px;
 }
 .ss-product-images-thumbnail{
-	max-width: 65px;
-	max-height: 50px;
+  object-fit: contain;
+	width: 65px;
+  height: 65px;
 	margin: 2px;
 }
 
@@ -1802,6 +1808,7 @@ main {
   width: 100% !important;
   text-align: center;
   justify-content: center;
+  align-content: center;
   padding: 1rem 0;
   height: 400px;
 }

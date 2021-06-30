@@ -33,23 +33,28 @@ export default function ProductImgsSlider({product, smallscreen}) {
                 />
 				<div id="product-images-slider">
                     {product && 
+                    <div className="product-images-thumbnail-container">
                         <img 
                             className="product-images-thumbnail images-slide-active" 
                             src={product.image} 
                             onClick={e => handleThumbnail(e)}
                             onMouseOver={e => handleThumbnail(e)}
                         />
+                    </div>
                     }
                     {product &&
                         product.previewImgs.map(image => {
                             return (
+                                <div className="product-images-thumbnail-container">
                                 <img 
                                     className="product-images-thumbnail images-slide-active" 
                                     src={image} 
                                     onClick={e => handleThumbnail(e)}
                                     onMouseOver={e => handleThumbnail(e)}
                                 />
+                                </div>
                             )
+                            
                         })
                     }
 				</div>
@@ -70,22 +75,26 @@ export default function ProductImgsSlider({product, smallscreen}) {
                 />
 				<div id="ss-product-images-slider">
                     {product && 
-                        <img 
-                            className="ss-product-images-thumbnail ss-images-slide-active" 
-                            src={product.image} 
-                            onClick={e => handleThumbnail(e)}
-                            onMouseOver={e => handleThumbnail(e)}
-                        />
+                        <div className="product-images-thumbnail-container">
+                            <img 
+                                className="ss-product-images-thumbnail ss-images-slide-active" 
+                                src={product.image} 
+                                onClick={e => handleThumbnail(e)}
+                                onMouseOver={e => handleThumbnail(e)}
+                            />
+                        </div>
                     }
                     {product &&
                         product.previewImgs.map(image => {
                             return (
-                                <img 
-                                    className="ss-product-images-thumbnail ss-images-slide-active" 
-                                    src={image} 
-                                    onClick={e => handleThumbnail(e)}
-                                    onMouseOver={e => handleThumbnail(e)}
-                                />
+                                <div className="product-images-thumbnail-container">
+                                    <img 
+                                        className="ss-product-images-thumbnail ss-images-slide-active" 
+                                        src={image} 
+                                        onClick={e => handleThumbnail(e)}
+                                        onMouseOver={e => handleThumbnail(e)}
+                                    />
+                                </div>
                             )
                         })
                     }
