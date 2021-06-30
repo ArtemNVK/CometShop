@@ -176,6 +176,7 @@ export default function ProductScreen(props) {
                     id="lens"
                     style={isLens ? {display: "block"} : {display: "none"}}
                     ></div>
+                 
                     <img
                       id="featured"
                       className={dbclick ? "open-image" : "large"}

@@ -379,7 +379,7 @@ img.small-img {
 img.medium {
   max-width: 29rem;
   width: 100%;
-}
+} 
 img.large {
   width: 500px;
 }
@@ -1270,15 +1270,21 @@ a.selected-filter:hover {
 /*  */
 /* Image Zoom */
 
-#featured {
-  max-height: 500px;
-}
-
 #img-container{
+  display: flex;
 	z-index: 1;
 	width: 500px !important;
 	position: relative;
+  height: 500px;
   cursor: pointer;
+  padding: 3rem 0;
+  /* flex: 1 1; */
+}
+
+
+#featured {
+  object-fit: contain;
+  transition: opacity .3s linear;
 }
 
 #lens{
@@ -1795,10 +1801,18 @@ main {
 #img-container {
   width: 100% !important;
   text-align: center;
+  justify-content: center;
+  padding: 1rem 0;
+  height: 400px;
+}
+
+#ss-featured {
+  object-fit: contain;
+  transition: opacity .3s linear;
 }
 
 img.large {
-  width: 90%;
+  width: 90vw;
 }
 
 .ss-open-image-bg {
