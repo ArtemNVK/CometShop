@@ -62,11 +62,11 @@ export const prices = [
 
   export const sliderData = [
     {
-      image: 'https://i.imgur.com/a5RfC2Z.png',
+      image: 'https://i.imgur.com/ZcZojoQ.jpeg',
       category: 'Telescopes'
     },
     {
-      image: 'https://i.imgur.com/uqWC2wm.png',
+      image: 'https://i.imgur.com/Q1AwvgO.jpeg',
       category: 'Telescope Camera Adapter'
     }
   ]

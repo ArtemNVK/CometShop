@@ -60,13 +60,16 @@ export default function PromotionsCarousel({slides}) {
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                     >
+    
                         {index === current && (
                         <Link to={slide.category !== null ? `/search/category/${slide.category}` : "#"}>
+                            
                             <img 
                             src={slide.image} 
                             alt="promo" 
                             className="promo-carousel-img"
                             />
+                         
                         </Link>
                         )
                         } 
