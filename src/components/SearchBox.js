@@ -32,20 +32,19 @@ export default function SearchBox(props) {
         setDisplay(false);
     };
 
-    const onChangeHandler = e => {
-        setSearch(e.target.value);
+    const handleOnBlur = e => {
+            setDisplay(false);
+    }
+
+    const submitHandler = e => {
+        e.preventDefault();
+        props.history.push(`/search/name/${search}`);
+        setDisplay(false);
+    }
+
+    const onChangeHandler = text => {
+        setSearch(text);
         let matches;
-
-        if(e.target.value === '') {
-            setDisplay(false);
-            return;
-        }
-
-        if(options.length === 0) {
-            setDisplay(false);
-            return;
-        }
-
         if(products){
             if(products.results) {
                 if (search.length >= 0) {
@@ -56,19 +55,20 @@ export default function SearchBox(props) {
                 } 
             }
         }
-        setOptions(matches)
+        setOptions(matches.splice(0, 5))
+
+        if(options.length === 0) {
+            setDisplay(false);
+            return;
+        }
+
+        if(text === '') {
+            setDisplay(false);
+            return;
+        }
         setDisplay(true);
     }
 
-    const handleOnBlur = e => {
-            setDisplay(false);
-    }
-
-    const submitHandler = e => {
-        e.preventDefault();
-        props.history.push(`/search/name/${search}`);
-        setDisplay(false);
-    }
 
     return (
         <div>
@@ -82,10 +82,11 @@ export default function SearchBox(props) {
                     type="text" 
                     name="q"
                     id="q"
+                    value={search}
                     placeholder='Search CometShop'
                     onFocus={(e) => e.target.placeholder = ""} 
                     onBlur={e => e.target.placeholder = "Search Cometshop"} 
-                    onChange={e => onChangeHandler(e)}
+                    onChange={e => onChangeHandler(e.target.value)}
                     ></input>
                     <button id="search-btn" type="submit">
                         <i id="search-icon" className="fa fa-search"></i>
