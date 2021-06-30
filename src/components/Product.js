@@ -8,8 +8,29 @@ export default function Product(props) {
   return (
     <div key={product._id} className="card">
       <Link to={`/product/${product._id}`}>
+      <div class="card-image-container">
+          <div class="card-image-sFd1">
+            <div class="card-image-v2sGK" role="button" tabindex="0">
+              <div class="card-image-img-wrapper">
+                  <div class="card-image-img-wrapper-gkSu1 card-image-img-wrapper-fLa3S">
+                    <div class="card-image-img-wrapper-final">
+                      <div class="card-image-img card-image-img-oig2S card-image-img-wrapper-fLa3S" style={{ backgroundImage: `url(${product.image})` }} ></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </Link>
+      {/* // <Link to={`/product/${product._id}`}>
+      //   <img className="medium" src={product.image} alt={product.name} />
+      // </Link> */}
+
+
+
+      {/* <Link to={`/product/${product._id}`}>
         <img className="medium" src={product.image} alt={product.name} />
-      </Link>
+      </Link> */}
       <div className="card-body">
         <div className="price">${product.price.toFixed(2)}</div>
           <div className="card__name">

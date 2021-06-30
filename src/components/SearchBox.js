@@ -19,6 +19,10 @@ export default function SearchBox(props) {
     };
       }, []);
 
+    // handleClickOutside uses useRef object property - current. 
+    // It checks if bearing useRef div contains an element which was clicked on
+    // If the clicked element lays outside of the useRef div - setDisplay(false) fires
+
       const handleClickOutside = event => {
         const { current: wrap } = wrapperRef;
         if (wrap && !wrap.contains(event.target)) {

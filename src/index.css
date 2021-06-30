@@ -388,19 +388,62 @@ img.large {
 .card {
   background-color: transparent;
   border-radius: 0.5rem;
-  height: 260px;
+  /* height: 260px; */
   width: 200px;
   margin: 1rem;
   color: #000;
+  padding: 1rem;
   margin-top: 3rem;
   margin-bottom: 17rem;
   box-shadow: 3px 2px 14px rgb(155, 154, 154, 0.3);
   transition: all 200ms ease-in-out;
 }
-.card img {
+
+.card-image-container {
+  display: flex;
   width: 200px;
   height: 260px;
 }
+.card-image-container .card-image-sFd1 {
+  width: 100%;
+}
+.card-image-v2sGK, .card-image-v2sGK .card-image-img-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+.card-image-v2sGK .card-image-img-wrapper {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+
+}
+.card-image-img-wrapper-gkSu1.card-image-img-wrapper-fLa3S {
+  position: relative;
+}
+.card-image-img-wrapper-final {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* background: #f2f2f7; */
+  /* border: 1px solid #f3f3f9; */
+  border-radius: 12px;
+  align-content: center !important;
+}
+.card-image-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: opacity .3s linear;
+  background-position: center;
+}
+.card-image-img-oig2S.card-image-img-wrapper-fLa3S {
+  width: 100%;
+  padding-top: 133.3%;
+}
+
 .card:hover {
     transform: translateY(-1rem);
     box-shadow: 2px 3px 18px rgb(155, 154, 154, 0.5);
@@ -412,6 +455,7 @@ img.large {
   color: #cb11ab;
 }
 .card-body {
+  margin-top: 0.5rem;
   padding: 1rem;
 }
 .card__name h2{
