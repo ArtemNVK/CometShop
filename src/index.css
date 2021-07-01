@@ -2536,6 +2536,7 @@ img.large {
 @media screen and (min-width: 1900px) and (max-width: 2000px) {
   .carousel__container {
     max-height: 400px;
+    margin-bottom: 10rem;
   }
   .slider {
     /* width: 60%; */
